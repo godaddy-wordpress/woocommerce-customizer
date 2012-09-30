@@ -113,7 +113,7 @@ class WC_Customizer {
 	 */
 	public static function plugin_manage_link( $actions ) {
 		// add the link to the front of the actions list
-		return ( array_merge( array( 'start_customizing' => sprintf( '<a href="%s">%s', admin_url( 'admin.php?page=woocommerce_customizer' ), __( 'Start Customizing', self::$text_domain ) ) ),
+		return ( array_merge( array( 'start_customizing' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=woocommerce_customizer' ), __( 'Start Customizing', self::$text_domain ) ) ),
 			$actions )
 		);
 	}
