@@ -24,7 +24,7 @@
  * @since 1.0
  */
 
-//Check if WooCommerce is active
+// Check if WooCommerce is active
 if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
 	return;
 
@@ -36,12 +36,19 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
  */
 class WC_Customizer {
 
+	/** @var string option db prefix */
 	public static $option_name = 'wc_customizer_active_customizations';
+
+	/** @var string text domain */
 	public static $text_domain = 'wc_customizer';
 
+	/** @var plugin path */
 	public static $plugin_path;
+
+	/** @var plugin url */
 	public static $plugin_url;
 
+	/** @var active filters */
 	public static $filters;
 
 	/**
@@ -69,7 +76,7 @@ class WC_Customizer {
 		// load filter 'tags' and values
 		self::$filters = maybe_unserialize( get_option( self::$option_name ) );
 
-		// only add filter if some exist
+		// only add filters if some exist
 		if ( self::$filters ) {
 
 			foreach ( self::$filters as $filter_name => $filter_value ) {
@@ -106,9 +113,7 @@ class WC_Customizer {
 	 *
 	 * @access public
 	 * @since  1.0
-	 *
 	 * @param array $actions associative array of action names to anchor tags
-	 *
 	 * @return array associative array of plugin action links
 	 */
 	public static function plugin_manage_link( $actions ) {

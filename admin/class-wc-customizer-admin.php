@@ -17,7 +17,7 @@ class WC_Customizer_Admin {
 	/** @var array tab IDs / titles admin page */
 	public static $tabs;
 
-	/** @var string submenu page hook suffix  */
+	/** @var string sub-menu page hook suffix  */
 	public static $page;
 
 
@@ -25,7 +25,7 @@ class WC_Customizer_Admin {
 	 * Init Admin class
 	 *
 	 * @access public
-	 * @since  1.0;
+	 * @since  1.0
 	 * @return void
 	 */
 	public static function init() {
@@ -49,9 +49,7 @@ class WC_Customizer_Admin {
 	 *
 	 * @access public
 	 * @since  1.0
-	 *
-	 * @param $hook_suffix;
-	 *
+	 * @param $hook_suffix
 	 * @return void
 	 */
 	public static function load_styles_scripts( $hook_suffix ) {
@@ -61,7 +59,7 @@ class WC_Customizer_Admin {
 		if ( $hook_suffix != self::$page )
 			return;
 
-		//WooCommerce styles
+		// WooCommerce styles
 		wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
 
 		// WooCommerce Admin JS for tool tips
@@ -100,10 +98,10 @@ class WC_Customizer_Admin {
 		if ( false === ( $current_tab = self::get_current_tab() ) )
 			return;
 		?>
-  <div class="wrap woocommerce">
-      <form method="post" id="mainform" action="" enctype="multipart/form-data">
-          <div class="icon32 icon32-woocommerce-settings" id="icon-woocommerce"><br /></div>
-          <h2 class="nav-tab-wrapper woo-nav-tab-wrapper">
+		<div class="wrap woocommerce">
+				<form method="post" id="mainform" action="" enctype="multipart/form-data">
+						<div class="icon32 icon32-woocommerce-settings" id="icon-woocommerce"><br /></div>
+						<h2 class="nav-tab-wrapper woo-nav-tab-wrapper">
 						<?php
 
 						foreach ( self::$tabs as $tab_id => $tab_title ) :
@@ -153,11 +151,9 @@ class WC_Customizer_Admin {
 	 * Output fields to page
 	 *
 	 * @access public
-	 * @since  1.0;
-	 *
+	 * @since  1.0
 	 * @param array  $fields
 	 * @param string $tab current tab slug
-	 *
 	 * @return void
 	 */
 	public static function output_fields( $fields, $tab ) {
@@ -226,11 +222,9 @@ class WC_Customizer_Admin {
 	 * Save admin fields into serialized option
 	 *
 	 * @access public
-	 * @since  1.0;
-	 *
+	 * @since  1.0
 	 * @param array  $fields
 	 * @param string $tab current tab slug
-	 *
 	 * @return bool
 	 */
 	public static function save_fields( $fields, $tab ) {
@@ -506,13 +500,13 @@ class WC_Customizer_Admin {
 	 * Get current tab slug
 	 *
 	 * @access private
-	 * @since  1.0;
+	 * @since  1.0
 	 * @return string slug of current tab
 	 */
 	private static function get_current_tab() {
 
 		if ( empty( $_GET['tab'] ) ) {
-
+			// default to the first tab
 			reset( self::$tabs );
 			return key( self::$tabs );
 
