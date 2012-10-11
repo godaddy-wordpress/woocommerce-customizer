@@ -1,4 +1,4 @@
 woocommerce-customizer
 ======================
 
-A Wordpress plugin to help customize WooCommerce
+A WordPress plugin to help customize WooCommerce
