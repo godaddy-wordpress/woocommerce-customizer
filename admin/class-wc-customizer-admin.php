@@ -30,42 +30,35 @@ class WC_Customizer_Admin {
 	 */
 	public static function init() {
 
-		self::$tabs = array( 'shop_loop'        => __( 'Shop Loop', WC_Customizer::$text_domain ),
-												 'product_page'     => __( 'Product Page', WC_Customizer::$text_domain ),
-												 'checkout'         => __( 'Checkout', WC_Customizer::$text_domain ),
-												 'misc'             => __( 'Misc', WC_Customizer::$text_domain )
+		self::$tabs = array( 'shop_loop'    => __( 'Shop Loop', WC_Customizer::$text_domain ),
+							 'product_page' => __( 'Product Page', WC_Customizer::$text_domain ),
+							 'checkout'     => __( 'Checkout', WC_Customizer::$text_domain ),
+							 'misc'         => __( 'Misc', WC_Customizer::$text_domain )
 		);
 
-		// Load necessary admin styles / scripts
-		add_action( 'admin_enqueue_scripts', __CLASS__ . '::load_styles_scripts' );
+		// Add settings page screen ID to list of pages for WC CSS/JS to load on
+		add_filter( 'woocommerce_screen_ids', array( __CLASS__, 'load_woocommerce_styles_scripts' ) );
 
 		// Add 'Customizer' link under WooCommerce menu
-		add_action( 'admin_menu', __CLASS__ . '::add_menu_link' );
+		add_action( 'admin_menu', array( __CLASS__, 'add_menu_link' ) );
 
 	}
+
 
 	/**
-	 * Load admin styles and scripts, only on our page
+	 * Add Customizer settings screen ID to the list of pages for WC to load CSS/JS on
 	 *
-	 * @access public
 	 * @since  1.0
-	 * @param $hook_suffix
-	 * @return void
+	 * @param array $screen_ids
+	 * @return array
 	 */
-	public static function load_styles_scripts( $hook_suffix ) {
-		global $woocommerce;
+	public static function load_woocommerce_styles_scripts( $screen_ids ) {
 
-		// only load on our settings page
-		if ( $hook_suffix != self::$page )
-			return;
+		$screen_ids[] = 'woocommerce_page_woocommerce_customizer';
 
-		// WooCommerce styles
-		wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
-
-		// WooCommerce Admin JS for tool tips
-		wp_enqueue_script( 'woocommerce_admin', $woocommerce->plugin_url() . '/assets/js/admin/woocommerce_admin.min.js', array( 'jquery', 'jquery-ui-widget', 'jquery-ui-core' ), $woocommerce->version );
-
+		return $screen_ids;
 	}
+
 
 	/**
 	 * Add 'Customizer' menu link under 'WooCommerce' top level menu
@@ -176,9 +169,9 @@ class WC_Customizer_Admin {
 			if ( ! isset( $field['desc_tip'] ) ) $field['desc_tip'] = false;
 
 			if ( $field['desc_tip'] === true ) {
-				$description = '<img class="help_tip" data-tip="' . esc_attr( $field['desc'] ) . '" src="' . $woocommerce->plugin_url() . '/assets/images/help.png" />';
+				$description = '<img height="16" width="16" class="help_tip" data-tip="' . esc_attr( $field['desc'] ) . '" src="' . $woocommerce->plugin_url() . '/assets/images/help.png" />';
 			} elseif ( $field['desc_tip'] ) {
-				$description = '<img class="help_tip" data-tip="' . esc_attr( $field['desc_tip'] ) . '" src="' . $woocommerce->plugin_url() . '/assets/images/help.png" />';
+				$description = '<img height="16" width="16" class="help_tip" data-tip="' . esc_attr( $field['desc_tip'] ) . '" src="' . $woocommerce->plugin_url() . '/assets/images/help.png" />';
 			} else {
 				$description = '<span class="description">' . $field['desc'] . '</span>';
 			}
@@ -346,37 +339,30 @@ class WC_Customizer_Admin {
 			'product_page' =>
 
 			array(
-				// tab title customization coming in wc 1.7
-				/*array(
-														'name'		=> __( 'Tab Titles', WC_Customizer::$text_domain ),
-														'type'		=> 'title'
-													),
-
-													array(
-														'filter_id'		=> 'woocommerce_product_description_tab_title',
-														'name'				=> __( 'Product Description', WC_Customizer::$text_domain ),
-														'desc_tip'		=> __( 'Changes the Production Description tab title', WC_Customizer::$text_domain ),
-														'type'				=> 'text'
-													),
-
-													array(
-														'filter_id'		=> 'woocommerce_product_additional_information_tab_title',
-														'name'				=> __( 'Additional Information', WC_Customizer::$text_domain ),
-														'desc_tip'		=> __( 'Changes the Additional Information tab title', WC_Customizer::$text_domain ),
-														'type'				=> 'text'
-													),
-
-													array(
-														'filter_id'		=> 'woocommerce_reviews_tab_title',
-														'name'				=> __( 'Reviews', WC_Customizer::$text_domain ),
-														'desc_tip'		=> __( 'Changes the Reviews tab title', WC_Customizer::$text_domain ),
-														'type'				=> 'text'
-													),
-
-													array( 'type' => 'sectionend' ),*/
 
 				array(
-					'name'    => __( 'Tab Headings', WC_Customizer::$text_domain ),
+					'name'		=> __( 'Tab Titles', WC_Customizer::$text_domain ),
+					'type'		=> 'title'
+				),
+
+				array(
+					'filter_id'		=> 'woocommerce_product_description_tab_title',
+					'name'				=> __( 'Product Description', WC_Customizer::$text_domain ),
+					'desc_tip'		=> __( 'Changes the Production Description tab title', WC_Customizer::$text_domain ),
+					'type'				=> 'text'
+				),
+
+				array(
+					'filter_id'		=> 'woocommerce_product_additional_information_tab_title',
+					'name'				=> __( 'Additional Information', WC_Customizer::$text_domain ),
+					'desc_tip'		=> __( 'Changes the Additional Information tab title', WC_Customizer::$text_domain ),
+					'type'				=> 'text'
+				),
+
+				array( 'type' => 'sectionend' ),
+
+				array(
+					'name'    => __( 'Tab Content Headings', WC_Customizer::$text_domain ),
 					'type'    => 'title'
 				),
 

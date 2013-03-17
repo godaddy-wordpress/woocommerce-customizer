@@ -13,7 +13,7 @@
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package    WooCommerce Customizer
+ * @package    WooCommerce-Customizer
  * @author     Max Rice
  * @since      1.0
  */
