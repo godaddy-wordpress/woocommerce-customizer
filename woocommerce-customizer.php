@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Customizer
  * Plugin URI: http://www.maxrice.com/wordpress/woocommerce-customizer/
  * Description: Helps you customize WooCommerce without writing any code
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Max Rice
  * Author URI: http://www.maxrice.com
  *

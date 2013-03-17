@@ -2,9 +2,9 @@
 Contributors: maxrice
 Donate link: http://www.maxrice.com
 Tags: woocommerce
-Requires at least: 3.3
-Tested up to: 3.4.2
-Stable tag: 1.0
+Requires at least: 3.5.1
+Tested up to: 3.5.1
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,10 @@ Yes! Fork the plugin on [Github](https://github.com/maxrice/woocommerce-customiz
 2. Customizations galore!
 
 == Changelog ==
+
+= 1.0.1 =
+* Add two new filters for customizing the Product Description and Additional Information tab titles
+* Fix TipTips on Customizer page
 
 = 1.0 =
 * Initial release
