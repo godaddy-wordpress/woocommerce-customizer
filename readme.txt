@@ -53,7 +53,7 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 
 == Changelog ==
 
-= 1.1-beta =
+= 1.1 =
 * Refactor to support the upcoming WooCommerce 2.1 beta
 * Localization - Text domain changed from `wc_customizer` to `wc-customizer` and loaded properly on `init` hook
 
