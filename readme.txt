@@ -1,10 +1,10 @@
 === WooCommerce Customizer ===
-Contributors: maxrice
-Donate link: http://www.maxrice.com
+Contributors: maxrice, justinstern, skyverge
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce
-Requires at least: 3.5.1
-Tested up to: 3.5.1
-Stable tag: 1.0.1
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,11 +40,11 @@ Most likely because a filter does not yet exist within WooCommerce, or a filter 
 
 = I found a bug! What do I do? =
 
-Please submit an issue on [Github](https://github.com/maxrice/woocommerce-customizer/) along with a description of the problem so I can fix it :)
+Please submit an issue on [Github](https://github.com/skyverge/woocommerce-customizer/) along with a description of the problem so we can fix it :)
 
 = Can I contribute to the plugin? =
 
-Yes! Fork the plugin on [Github](https://github.com/maxrice/woocommerce-customizer/) and send a pull request.
+Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customizer/) and send a pull request.
 
 == Screenshots ==
 
@@ -52,6 +52,10 @@ Yes! Fork the plugin on [Github](https://github.com/maxrice/woocommerce-customiz
 2. Customizations galore!
 
 == Changelog ==
+
+= 1.1-beta =
+* Refactor to support the upcoming WooCommerce 2.1 beta
+* Localization - Text domain changed from `wc_customizer` to `wc-customizer` and loaded properly on `init` hook
 
 = 1.0.1 =
 * Add two new filters for customizing the Product Description and Additional Information tab titles
