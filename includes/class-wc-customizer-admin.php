@@ -61,6 +61,9 @@ class WC_Customizer_Admin {
 
 		// Add 'Customizer' link under WooCommerce menu
 		add_action( 'admin_menu', array( $this, 'add_menu_link' ) );
+
+		// save settings
+		add_action( 'admin_init', array( $this, 'save_settings' ) );
 	}
 
 
@@ -125,26 +128,14 @@ class WC_Customizer_Admin {
 
 				?> </h2> <?php
 
-				// save settings
-				if ( ! empty( $_POST ) ) {
-
-					if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'wc-customizer-settings' ) )
-						wp_die( __( 'Action failed. Please refresh the page and retry.', 'wc-customizer' ) );
-
-
-					$this->save_settings( $this->get_settings( $current_tab ) );
-
-					wp_redirect( add_query_arg( array( 'saved' => 'true' ) ) );
-
-					exit;
-				}
-
 				// display success message
 				if ( ! empty( $_GET['saved'] ) )
 					echo '<div id="message" class="updated fade"><p><strong>' . __( 'Your customizations have been saved.', 'wc-customizer' ) . '</strong></p></div>';
 
 				// display filters
 				$this->render_settings( $this->get_settings( $current_tab ) );
+
+				?><input type="hidden" name="wc_customizer_settings" value="1" /><?php
 
 				submit_button( __( 'Save Customizations', 'wc-customizer' ) );
 
@@ -205,9 +196,25 @@ class WC_Customizer_Admin {
 	 */
 	public function save_settings( $fields ) {
 
+		// save settings
+		if ( ! isset( $_POST['wc_customizer_settings'] ) ) {
+			return;
+		}
+
+		// permissions check
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			return;
+		}
+
+		// security check
+		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'wc-customizer-settings' ) )
+			wp_die( __( 'Action failed. Please refresh the page and retry.', 'wc-customizer' ) );
+
 		$customizations = get_option( 'wc_customizer_active_customizations' );
 
-		foreach ( $fields as $field ) {
+		$current_tab = ( empty( $_GET['tab'] ) ) ? 'shop_loop' : urldecode( $_GET['tab'] );
+
+		foreach ( $this->get_settings( $current_tab ) as $field ) {
 
 			if ( ! isset( $field['id'] ) )
 				continue;
@@ -220,6 +227,10 @@ class WC_Customizer_Admin {
 		}
 
 		update_option( 'wc_customizer_active_customizations', $customizations );
+
+		wp_redirect( add_query_arg( array( 'saved' => 'true' ) ) );
+
+		exit;
 	}
 
 
