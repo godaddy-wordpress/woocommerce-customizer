@@ -3,8 +3,8 @@ Contributors: maxrice, justinstern, skyverge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.1
+Tested up to: 3.8
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,9 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 2. Customizations galore!
 
 == Changelog ==
+
+= 1.1.1 =
+* WooCommerce 2.1 Compatibility
 
 = 1.1 =
 * Refactor to support the upcoming WooCommerce 2.1 beta
