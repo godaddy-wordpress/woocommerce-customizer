@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,8 +53,11 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 
 == Changelog ==
 
+= 1.2.1 =
+* Fix missing compatibility class error 
+
 = 1.2 =
-* Fixed issues with add to cart button text customizations in WooCommerce 2.1
+* Fix issues with add to cart button text customizations in WooCommerce 2.1
 
 = 1.1.1 =
 * WooCommerce 2.1 Compatibility
