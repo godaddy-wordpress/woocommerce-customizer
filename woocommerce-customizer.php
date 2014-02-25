@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 1.1.1-1
+ * Version: 1.2
  * Text Domain: wc-customizer
  * Domain Path: /languages/
  *
@@ -72,7 +72,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '1.1.1-1';
+	const VERSION = '1.2';
 
 	/** var array the active filters */
 	public $filters;
@@ -108,7 +108,7 @@ class WC_Customizer {
 	/**
 	 * Load customizations after WC is loaded so the version can be checked
 	 *
-	 * @since 1.1.1-1
+	 * @since 1.2
 	 */
 	public function load_customizations() {
 
@@ -195,7 +195,7 @@ class WC_Customizer {
 	 *
 	 * The filter signature changed from `single_add_to_cart_text` to `woocommerce_product_single_add_to_cart_text`
 	 *
-	 * @since 1.1.1-1
+	 * @since 1.2
 	 */
 	public function customize_single_add_to_cart_text() {
 
@@ -211,7 +211,7 @@ class WC_Customizer {
 	 * This is sort of a hack but prevents a major refactoring and maintains backwards compatibility until WC 2.1+ can
 	 * be required
 	 *
-	 * @since 1.1.1-1
+	 * @since 1.2
 	 * @param string $text add to cart text
 	 * @param WC_Product $product product object
 	 * @return string modified add to cart text
