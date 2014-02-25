@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 1.1.1
+ * Version: 1.1.1-1
  * Text Domain: wc-customizer
  * Domain Path: /languages/
  *
@@ -27,6 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
 	return;
 
+// required compatibility class
+require_once( 'includes/class-wc-customizer-compatibility.php' );
 
 /**
  * The WC_Customizer global object
@@ -70,7 +72,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '1.1.1';
+	const VERSION = '1.1.1-1';
 
 	/** var array the active filters */
 	public $filters;
@@ -99,6 +101,17 @@ class WC_Customizer {
 			$this->install();
 		}
 
+		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
+	}
+
+
+	/**
+	 * Load customizations after WC is loaded so the version can be checked
+	 *
+	 * @since 1.1.1-1
+	 */
+	public function load_customizations() {
+
 		// load filter names and values
 		$this->filters = get_option( 'wc_customizer_active_customizations' );
 
@@ -106,10 +119,26 @@ class WC_Customizer {
 		if ( ! empty( $this->filters ) ) {
 
 			foreach ( $this->filters as $filter_name => $filter_value ) {
-				add_filter( $filter_name, array( $this, 'customize' ) );
-		}
 
-			// for use some day, in a galaxy far, far away, when PHP 5.3+ has greater WP adoption
+				// WC 2.1 changed the add to cart text filter signatures so conditionally add the new filters
+				if ( false !== strpos( $filter_name, 'add_to_cart_text' ) && WC_Customizer_Compatibility::is_wc_version_gte_2_1() ) {
+
+					if ( $filter_name == 'single_add_to_cart_text' ) {
+
+						add_filter( 'woocommerce_product_single_add_to_cart_text', array( $this, 'customize_single_add_to_cart_text' ) );
+
+					} else {
+
+						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 10, 2 );
+					}
+
+				} else {
+
+					add_filter( $filter_name, array( $this, 'customize' ) );
+				}
+			}
+
+				// for use some day, in a galaxy far, far away, when WP has greater 5.3 adoption
 			// add_filter( $filter_name, function() use ( $filter_value ) { return $filter_value; } );
 		}
 	}
@@ -153,10 +182,70 @@ class WC_Customizer {
 
 		$current_filter = current_filter();
 
-		if ( isset( $this->filters[ $current_filter ] ) )
+		if ( isset( $this->filters[ $current_filter ] ) ) {
 			return $this->filters[ $current_filter ];
+		}
 
 		// no need to return a value passed in, because if a filter is set, it's designed to only return that value
+	}
+
+
+	/**
+	 * Apply the single add to cart button text customization in WC 2.1+
+	 *
+	 * The filter signature changed from `single_add_to_cart_text` to `woocommerce_product_single_add_to_cart_text`
+	 *
+	 * @since 1.1.1-1
+	 */
+	public function customize_single_add_to_cart_text() {
+
+		return $this->filters['single_add_to_cart_text'];
+	}
+
+
+	/**
+	 * Apply the shop loop add to cart button text customization in WC 2.1+
+	 *
+	 * The filter signature changed from `add_to_cart_text|{type}_add_to_cart_text` to `woocommerce_product_add_to_cart_text`
+	 *
+	 * This is sort of a hack but prevents a major refactoring and maintains backwards compatibility until WC 2.1+ can
+	 * be required
+	 *
+	 * @since 1.1.1-1
+	 * @param string $text add to cart text
+	 * @param WC_Product $product product object
+	 * @return string modified add to cart text
+	 */
+	public function customize_add_to_cart_text( $text, $product ) {
+
+		// out of stock add to cart text
+		if ( isset( $this->filters['out_of_stock_add_to_cart_text'] ) && ! $product->is_in_stock() ) {
+
+			return $this->filters['out_of_stock_add_to_cart_text'];
+		}
+
+		if ( isset( $this->filters['add_to_cart_text'] ) && $product->is_type( 'simple' ) ) {
+
+			// simple add to cart text
+			return $this->filters['add_to_cart_text'];
+
+		} elseif ( isset( $this->filters['variable_add_to_cart_text'] ) && $product->is_type( 'variable') )  {
+
+			// variable add to cart text
+			return $this->filters['variable_add_to_cart_text'];
+
+		} elseif ( isset( $this->filters['grouped_add_to_cart_text'] ) && $product->is_type( 'grouped' ) ) {
+
+			// grouped add to cart text
+			return $this->filters['grouped_add_to_cart_text'];
+
+		} elseif( isset( $this->filters['external_add_to_cart_text'] ) && $product->is_type( 'external' ) ) {
+
+			// external add to cart text
+			return $this->filters['external_add_to_cart_text'];
+		}
+
+		return $text;
 	}
 
 
@@ -167,7 +256,7 @@ class WC_Customizer {
 	 * Return the plugin action links.  This will only be called if the plugin
 	 * is active.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $actions associative array of action names to anchor tags
 	 * @return array associative array of plugin action links
 	 */
@@ -204,8 +293,9 @@ class WC_Customizer {
 		}
 
 		// upgrade if installed version lower than plugin version
-		if ( -1 === version_compare( $installed_version, self::VERSION ) )
+		if ( -1 === version_compare( $installed_version, self::VERSION ) ) {
 			$this->upgrade( $installed_version );
+		}
 	}
 
 
