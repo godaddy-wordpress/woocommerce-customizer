@@ -1,0 +1,14 @@
+*.zip
+.DS_Store
+
+# Grunt.js SASS cache files
+/.sass-cache
+
+# NPM packages used by Grunt.js
+/node_modules
+
+# NPM debug log
+npm-debug.log
+
+# build directory
+/build
