@@ -165,7 +165,7 @@ class WC_Customizer {
 	public function load_translation() {
 
 		// localization in the init action for WPML support
-		load_plugin_textdomain( 'wc-customizer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'wc-customizer', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages' );
 	}
 
 
