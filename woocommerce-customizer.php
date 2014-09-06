@@ -27,15 +27,27 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
 	return;
 
-// required compatibility class
-require_once( 'includes/class-wc-customizer-compatibility.php' );
+// WC version check
+if ( version_compare( get_option( 'woocommerce_db_version' ), '2.1', '<' ) ) {
 
-/**
- * The WC_Customizer global object
- * @name $wc_customizer
- * @global WC_Customizer $GLOBALS['wc_customizer']
- */
-$GLOBALS['wc_customizer'] = new WC_Customizer();
+	function woocommerce_customizer_outdated_version_notice() {
+
+		$message = sprintf(
+			__( '%sWooCommerce Customizer is inactive.%s This version requires WooCommerce 2.1 or newer. Please %supdate WooCommerce to version 2.1 or newer%s', 'woocommerce-customizer' ),
+			'<strong>',
+			'</strong>',
+			'<a href="' . admin_url( 'plugins.php' ) . '">',
+			'&nbsp;&raquo;</a>'
+		);
+
+		echo sprintf( '<div class="error"><p>%s</p></div>', $message );
+	}
+
+	add_action( 'admin_notices', 'woocommerce_customizer_outdated_version_notice' );
+
+	return;
+}
+
 
 /**
  * # WooCommerce Customizer Main Plugin Class
@@ -135,7 +147,7 @@ class WC_Customizer {
 			foreach ( $this->filters as $filter_name => $filter_value ) {
 
 				// WC 2.1 changed the add to cart text filter signatures so conditionally add the new filters
-				if ( false !== strpos( $filter_name, 'add_to_cart_text' ) && WC_Customizer_Compatibility::is_wc_version_gte_2_1() ) {
+				if ( false !== strpos( $filter_name, 'add_to_cart_text' ) ) {
 
 					if ( $filter_name == 'single_add_to_cart_text' ) {
 
@@ -151,23 +163,7 @@ class WC_Customizer {
 					add_filter( $filter_name, array( $this, 'customize' ) );
 				}
 			}
-
-				// for use some day, in a galaxy far, far away, when WP has greater 5.3 adoption
-			// add_filter( $filter_name, function() use ( $filter_value ) { return $filter_value; } );
 		}
-	}
-
-
-	/**
-	 * Include required admin files
-	 *
-	 * @since 1.1
-	 */
-	private function admin_includes() {
-
-		// admin UI
-		require( 'includes/class-wc-customizer-admin.php' );
-		$this->admin = new WC_Customizer_Admin();
 	}
 
 
@@ -179,7 +175,7 @@ class WC_Customizer {
 	public function load_translation() {
 
 		// localization in the init action for WPML support
-		load_plugin_textdomain( 'wc-customizer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'woocommerce-customizer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 
@@ -205,9 +201,7 @@ class WC_Customizer {
 
 
 	/**
-	 * Apply the single add to cart button text customization in WC 2.1+
-	 *
-	 * The filter signature changed from `single_add_to_cart_text` to `woocommerce_product_single_add_to_cart_text`
+	 * Apply the single add to cart button text customization
 	 *
 	 * @since 1.2
 	 */
@@ -218,12 +212,7 @@ class WC_Customizer {
 
 
 	/**
-	 * Apply the shop loop add to cart button text customization in WC 2.1+
-	 *
-	 * The filter signature changed from `add_to_cart_text|{type}_add_to_cart_text` to `woocommerce_product_add_to_cart_text`
-	 *
-	 * This is sort of a hack but prevents a major refactoring and maintains backwards compatibility until WC 2.1+ can
-	 * be required
+	 * Apply the shop loop add to cart button text customization
 	 *
 	 * @since 1.2
 	 * @param string $text add to cart text
@@ -326,4 +315,12 @@ class WC_Customizer {
 	}
 
 
-} // end \WC_Customizer
+}
+
+
+/**
+ * The WC_Customizer global object
+ * @name $wc_customizer
+ * @global WC_Customizer $GLOBALS['wc_customizer']
+ */
+$GLOBALS['wc_customizer'] = new WC_Customizer();
