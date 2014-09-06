@@ -5,11 +5,11 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 1.2.1
+ * Version: 2.0.0
  * Text Domain: wc-customizer
  * Domain Path: /languages/
  *
- * Copyright: (c) 2013 SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2013-2014 SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,7 +17,7 @@
  * @package   WC-Customizer
  * @author    SkyVerge
  * @category  Utility
- * @copyright Copyright (c) 2013, SkyVerge, Inc.
+ * @copyright Copyright (c) 2013-2014, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -84,7 +84,10 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '1.2.1';
+	const VERSION = '1.2.0.1';
+
+	/** @var \WC_Customizer_Settings instance */
+	public $settings;
 
 	/** var array the active filters */
 	public $filters;
@@ -93,7 +96,7 @@ class WC_Customizer {
 	/**
 	 * Initializes the plugin
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 
@@ -120,7 +123,7 @@ class WC_Customizer {
 	/**
 	 * Add settings page
 	 *
-	 * @since 1.2.1-1
+	 * @since 2.0.0
 	 * @param array $settings
 	 * @return array
 	 */
@@ -134,7 +137,7 @@ class WC_Customizer {
 	/**
 	 * Load customizations after WC is loaded so the version can be checked
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	public function load_customizations() {
 
@@ -170,7 +173,7 @@ class WC_Customizer {
 	/**
 	 * Handle localization, WPML compatible
 	 *
-	 * @since 1.1
+	 * @since 1.1.0
 	 */
 	public function load_translation() {
 
@@ -185,7 +188,7 @@ class WC_Customizer {
 	/**
 	 * Add hook to selected filters
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return string $filter_value value to use for selected hook
 	 */
 	public function customize() {
@@ -212,7 +215,7 @@ class WC_Customizer {
 	/**
 	 * Apply the single add to cart button text customization
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	public function customize_single_add_to_cart_text() {
 
@@ -223,7 +226,7 @@ class WC_Customizer {
 	/**
 	 * Apply the shop loop add to cart button text customization
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 * @param string $text add to cart text
 	 * @param WC_Product $product product object
 	 * @return string modified add to cart text
@@ -268,7 +271,7 @@ class WC_Customizer {
 	 * Return the plugin action links.  This will only be called if the plugin
 	 * is active.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param array $actions associative array of action names to anchor tags
 	 * @return array associative array of plugin action links
 	 */
@@ -291,7 +294,7 @@ class WC_Customizer {
 	/**
 	 * Run every time.  Used since the activation hook is not executed when updating a plugin
 	 *
-	 * @since 1.1
+	 * @since 1.1.0
 	 */
 	private function install() {
 
@@ -314,7 +317,7 @@ class WC_Customizer {
 	/**
 	 * Perform any version-related changes.
 	 *
-	 * @since 1.1
+	 * @since 1.1.0
 	 * @param int $installed_version the currently installed version of the plugin
 	 */
 	private function upgrade( $installed_version ) {

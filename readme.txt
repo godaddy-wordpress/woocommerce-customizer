@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 1.3.0
+Stable tag: 2.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -55,7 +55,7 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 
 == Changelog ==
 
-= 1.2.1-1 =
+= 2.0.0 =
 * Added Checkout "Create Account" checkbox default customization
 * Added Placeholder image source customization
 * Moved settings to WooCommerce > Settings > Customizer

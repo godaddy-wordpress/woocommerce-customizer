@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * Adds UX for adding/modifying customizations
  *
- * @since 1.2.1-1
+ * @since 2.0.0
  */
 class WC_Customizer_Settings extends WC_Settings_Page {
 
@@ -37,7 +37,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Add various admin hooks/filters
 	 *
-	 * @since 1.2.1-1
+	 * @since 2.0.0
 	 */
 	public function __construct() {
 
@@ -77,7 +77,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Render the settings for the current section
 	 *
-	 * @since 1.2.1-1
+	 * @since 2.0.0
 	 */
 	public function output() {
 
@@ -98,7 +98,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Return the customization value for the given filter
 	 *
-	 * @since 1.2.1-1
+	 * @since 2.0.0
 	 * @return string
 	 */
 	public function get_customization() {
@@ -112,7 +112,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Save the customizations
 	 *
-	 * @since 1.2.1-1
+	 * @since 2.0.0
 	 */
 	public function save() {
 
