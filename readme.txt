@@ -54,6 +54,7 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 == Changelog ==
 
 = 1.2.1-1 =
+* Added Checkout "Create Account" checkbox default customization
 * Moved settings to WooCommerce > Settings > Customizer
 * WooCommerce 2.2 Compatibility
 * Localization - Text domain changed from `wc-customizer` to `woocommerce-customizer`

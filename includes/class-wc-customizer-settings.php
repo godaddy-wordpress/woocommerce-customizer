@@ -317,8 +317,20 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Button Text', 'woocommerce-customizer' ),
+						'title' => __( 'Misc', 'woocommerce-customizer' ),
 						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'woocommerce_create_account_default_checked',
+						'title'    => __( 'Create Account checkbox default' ),
+						'desc_tip' => __( 'Control the default state for the Create Account checkbox', 'woocommerce-customizer' ),
+						'type'     => 'select',
+						'options'  => array(
+							'customizer_true'  => __( 'Checked', 'woocommerce-customizer' ),
+							'customizer_false' => __( 'Unchecked', 'woocommerce-customizer' ),
+						),
+						'default'  => 'customizer_false',
 					),
 
 					array(

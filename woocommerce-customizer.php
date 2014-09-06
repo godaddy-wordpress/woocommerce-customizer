@@ -193,7 +193,16 @@ class WC_Customizer {
 		$current_filter = current_filter();
 
 		if ( isset( $this->filters[ $current_filter ] ) ) {
-			return $this->filters[ $current_filter ];
+
+			if ( 'customizer_true' === $this->filters[ $current_filter] || 'customizer_true' === $this->filters[ $current_filter] ) {
+
+				// helper to return a pure boolean value
+				return 'customizer_true' === $this->filters[ $current_filter ];
+
+			} else {
+
+				return $this->filters[ $current_filter ];
+			}
 		}
 
 		// no need to return a value passed in, because if a filter is set, it's designed to only return that value
