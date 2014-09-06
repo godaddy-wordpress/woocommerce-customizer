@@ -91,8 +91,8 @@ class WC_Customizer {
 		// admin
 		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 
-			// include required files
-			$this->admin_includes();
+			// load settings page
+			add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_settings_page' ) );
 
 			// add a 'Configure' link to the plugin action links
 			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_plugin_action_links' ) );
@@ -102,6 +102,20 @@ class WC_Customizer {
 		}
 
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
+	}
+
+
+	/**
+	 * Add settings page
+	 *
+	 * @since 1.2.1-1
+	 * @param array $settings
+	 * @return array
+	 */
+	public function add_settings_page( $settings ) {
+
+		$settings[] = require_once( 'includes/class-wc-customizer-settings.php' );
+		return $settings;
 	}
 
 
@@ -263,7 +277,7 @@ class WC_Customizer {
 	public function add_plugin_action_links( $actions ) {
 
 		$custom_actions = array(
-			'configure' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=wc_customizer' ), __( 'Configure', 'wc-customizer' ) ),
+			'configure' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=wc-settings&tab=customizer&section=shop_loop' ), __( 'Configure', 'wc-customizer' ) ),
 			'faq'       => sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/plugins/woocommerce-customizer/faq/', __( 'FAQ', 'wc-customizer' ) ),
 			'support'   => sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/support/plugin/woocommerce-customizer', __( 'Support', 'wc-customizer' ) ),
 		);

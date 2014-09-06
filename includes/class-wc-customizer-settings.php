@@ -18,219 +18,122 @@
  *
  * @package     WC-Customizer/Classes
  * @author      SkyVerge
- * @copyright   Copyright (c) 2013, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2013-2014, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Admin class
+ * Settings
  *
  * Adds UX for adding/modifying customizations
  *
- * @since 1.0
+ * @since 1.2.1-1
  */
-class WC_Customizer_Admin {
-
-
-	/** @var array tab IDs / titles admin page */
-	public $tabs;
-
-	/** @var string sub-menu page hook suffix  */
-	public $page;
+class WC_Customizer_Settings extends WC_Settings_Page {
 
 
 	/**
-	 * Setup admin class
+	 * Add various admin hooks/filters
 	 *
-	 * @since 1.0
-	 * @return \WC_Customizer_Admin
+	 * @since 1.2.1-1
 	 */
 	public function __construct() {
 
-		$this->tabs = array(
+		$this->id    = 'customizer';
+		$this->label = __( 'Customizer', 'woocommerce-customizer' );
+
+		// add tab
+		add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
+
+		// show sections
+		add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
+
+		// show settings
+		add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
+
+		// save settings
+		add_action( 'woocommerce_settings_save_' . $this->id, array( $this, 'save' ) );
+
+		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
+	}
+
+	/**
+	 * Get sections
+	 *
+	 * @return array
+	 */
+	public function get_sections() {
+
+		return array(
 			'shop_loop'    => __( 'Shop Loop', 'wc-customizer' ),
 			'product_page' => __( 'Product Page', 'wc-customizer' ),
 			'checkout'     => __( 'Checkout', 'wc-customizer' ),
 			'misc'         => __( 'Misc', 'wc-customizer' )
 		);
+	}
 
-		// Add settings page screen ID to list of pages for WC CSS/JS to load on
-		add_filter( 'woocommerce_screen_ids', array( $this, 'load_woocommerce_styles_scripts' ) );
+	/**
+	 * Render the settings for the current section
+	 *
+	 * @since 1.2.1-1
+	 */
+	public function output() {
 
-		// Add 'Customizer' link under WooCommerce menu
-		add_action( 'admin_menu', array( $this, 'add_menu_link' ) );
+		$settings = $this->get_settings();
 
-		// save settings
-		add_action( 'admin_init', array( $this, 'save_settings' ) );
+		// inject the actual setting value before outputting the fields
+		// ::output_fields() uses get_option() but customizations are stored
+		// in a single option so this dynamically returns the correct value
+		foreach ( $this->customizations as $filter => $value ) {
+
+			add_filter( "pre_option_{$filter}", array( $this, 'get_customization' ) );
+		}
+
+		WC_Admin_Settings::output_fields( $settings );
 	}
 
 
 	/**
-	 * Add Customizer settings screen ID to the list of pages for WC to load CSS/JS on
+	 * Return the customization value for the given filter
 	 *
-	 * @since 1.0
-	 * @param array $screen_ids
-	 * @return array
+	 * @since 1.2.1-1
+	 * @return string
 	 */
-	public function load_woocommerce_styles_scripts( $screen_ids ) {
+	public function get_customization() {
 
-		$screen_ids[] = 'woocommerce_page_wc_customizer';
+		$filter = str_replace( 'pre_option_', '', current_filter() );
 
-		return $screen_ids;
+		return isset( $this->customizations[ $filter ] ) ? $this->customizations[ $filter ] : '';
 	}
 
 
 	/**
-	 * Add 'Customizer' menu link under 'WooCommerce' top level menu
+	 * Save the customizations
 	 *
-	 * @since 1.0
+	 * @since 1.2.1-1
 	 */
-	public function add_menu_link() {
+	public function save() {
 
-		$this->page = add_submenu_page(
-			'woocommerce',
-			__( 'WooCommerce Customizer', 'wc-customizer' ),
-			__( 'Customizer', 'wc-customizer' ),
-			'manage_woocommerce',
-			'wc_customizer',
-			array( $this, 'render_settings_page' )
-		);
-	}
+		foreach ( $this->get_settings() as $field ) {
 
+			// skip titles, etc
+			if ( ! isset( $field['id'] ) ) {
+				continue;
+			}
 
-	/**
-	 * Show Customizer settings page content for all tabs.
-	 *
-	 * @since 1.1
-	 */
-	public function render_settings_page() {
+			if ( ! empty( $_POST[ $field['id'] ] ) ) {
 
-		$current_tab = ( empty( $_GET['tab'] ) ) ? 'shop_loop' : urldecode( $_GET['tab'] );
+				$this->customizations[ $field['id'] ] = wp_kses_post( $_POST[ $field['id'] ] );
 
-		?>
-		<div class="wrap woocommerce">
-			<form method="post" id="mainform" action="" enctype="multipart/form-data">
-			<div id="icon-woocommerce" class="icon32-woocommerce-settings icon32"><br /></div>
-			<h2 class="nav-tab-wrapper woo-nav-tab-wrapper">
+			} elseif ( isset( $this->customizations[ $field['id'] ] ) ) {
 
-				<?php
-
-				// display tabs
-				foreach ( $this->tabs as $tab_id => $tab_title ) {
-
-					$class = ( $tab_id === $current_tab ) ? 'nav-tab nav-tab-active' : 'nav-tab';
-					$url   = add_query_arg( 'tab', $tab_id, admin_url( 'admin.php?page=wc_customizer' ) );
-
-					printf( '<a href="%s" class="%s">%s</a>', $url, $class, $tab_title );
-				}
-
-				?> </h2> <?php
-
-				// display success message
-				if ( ! empty( $_GET['saved'] ) )
-					echo '<div id="message" class="updated fade"><p><strong>' . __( 'Your customizations have been saved.', 'wc-customizer' ) . '</strong></p></div>';
-
-				// display filters
-				$this->render_settings( $this->get_settings( $current_tab ) );
-
-				?><input type="hidden" name="wc_customizer_settings" value="1" /><?php
-
-				submit_button( __( 'Save Customizations', 'wc-customizer' ) );
-
-				wp_nonce_field( 'wc-customizer-settings', '_wpnonce', true, true );
-
-		?></form></div> <?php
-	}
-
-
-	/**
-	 * Show customization fields for a given tab
-	 *
-	 * @see adapted from woocommerce_admin_fields()
-	 *
-	 * @since 1.1
-	 * @param array $fields the customization fields to show
-	 */
-	private function render_settings( $fields ) {
-
-		$customizations = get_option( 'wc_customizer_active_customizations' );
-
-		foreach ( $fields as $field ) {
-
-			switch ( $field['type'] ) {
-
-				case 'title':
-					echo '<h3>' . esc_html( $field['title'] ) . '</h3>';
-					echo '<table class="form-table">';
-					break;
-
-				case 'sectionend':
-					echo '</table>';
-					break;
-
-				case 'text':;
-					$value = ( isset( $customizations[ $field['id'] ] ) ) ? $customizations[ $field['id'] ] : '';
-					?>
-						<tr valign="top">
-						<th scope="row" class="titledesc">
-							<label for="<?php echo esc_attr( $field['id'] ); ?>"><?php echo esc_html( $field['title'] ); ?></label>
-							<img class="help_tip" data-tip="<?php echo esc_attr( $field['desc_tip'] ); ?>" src="<?php echo esc_url( $GLOBALS['woocommerce']->plugin_url() . '/assets/images/help.png' ); ?>" height="16" width="16" />
-						</th>
-						<td class="forminp forminp-text">
-							<input name="<?php echo esc_attr( $field['id'] ); ?>" id="<?php echo esc_attr( $field['id'] ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
-						</td>
-						</tr>
-					<?php
-					break;
+				unset( $this->customizations[ $field['id'] ] );
 			}
 		}
-	}
 
-
-	/**
-	 * Save customizations for a given tab
-	 *
-	 * @since 1.1
-	 */
-	public function save_settings( $fields ) {
-
-		// save settings
-		if ( ! isset( $_POST['wc_customizer_settings'] ) ) {
-			return;
-		}
-
-		// permissions check
-		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			return;
-		}
-
-		// security check
-		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'wc-customizer-settings' ) )
-			wp_die( __( 'Action failed. Please refresh the page and retry.', 'wc-customizer' ) );
-
-		$customizations = get_option( 'wc_customizer_active_customizations' );
-
-		$current_tab = ( empty( $_GET['tab'] ) ) ? 'shop_loop' : urldecode( $_GET['tab'] );
-
-		foreach ( $this->get_settings( $current_tab ) as $field ) {
-
-			if ( ! isset( $field['id'] ) )
-				continue;
-
-			if ( ! empty( $_POST[ $field['id'] ] ) )
-				$customizations[ $field['id'] ] = wp_kses_post( $_POST[ $field['id'] ] );
-
-			elseif ( isset( $customizations[ $field['id'] ] ) )
-				unset( $customizations[ $field['id'] ] );
-		}
-
-		update_option( 'wc_customizer_active_customizations', $customizations );
-
-		wp_redirect( add_query_arg( array( 'saved' => 'true' ) ) );
-
-		exit;
+		update_option( 'wc_customizer_active_customizations', $this->customizations );
 	}
 
 
@@ -238,14 +141,13 @@ class WC_Customizer_Admin {
 	 * Return admin fields in proper format for outputting / saving
 	 *
 	 * @since 1.1
-	 * @param string $tab_id the tab to get settings for
 	 * @return array
 	 */
-	private function get_settings( $tab_id ) {
+	public function get_settings() {
 
 		$settings = array(
 
-			'shop_loop'    =>
+			'shop_loop' =>
 
 				array(
 
@@ -382,7 +284,7 @@ class WC_Customizer_Admin {
 					array( 'type' => 'sectionend' )
 				),
 
-			'checkout'     =>
+			'checkout' =>
 
 				array(
 
@@ -430,7 +332,7 @@ class WC_Customizer_Admin {
 
 				),
 
-			'misc'         =>
+			'misc' =>
 
 				array(
 
@@ -463,11 +365,13 @@ class WC_Customizer_Admin {
 					array( 'type' => 'sectionend' )
 
 				),
-
 		);
 
-		return ( isset( $settings[ $tab_id ] ) ) ? $settings[ $tab_id ] : array();
+		return isset( $settings[ $GLOBALS['current_section' ] ] ) ?  $settings[ $GLOBALS['current_section' ] ] : $settings['shop_loop'];
 	}
 
 
-} // end \WC_Customizer_Admin class
+}
+
+// setup settings
+$GLOBALS['wc_customizer']->settings = new WC_Customizer_Settings();
