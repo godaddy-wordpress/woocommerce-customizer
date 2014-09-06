@@ -1,5 +1,5 @@
 === WooCommerce Customizer ===
-Contributors: maxrice, justinstern, skyverge
+Contributors: maxrice, justinstern, tamarazuk, skyverge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce
 Requires at least: 3.5
@@ -54,7 +54,7 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 == Changelog ==
 
 = 1.2.1 =
-* Fix missing compatibility class error 
+* Fix missing compatibility class error
 
 = 1.2 =
 * Fix issues with add to cart button text customizations in WooCommerce 2.1
