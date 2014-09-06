@@ -22,8 +22,10 @@ Here's the list of customizations you can make:
 *   The number of products displayed per page
 *   Heading text for the 'Product Description' and 'Additional Information' tab.
 *   Checkout page coupon / login text
+*   Checkout page "Create Account" checkbox default
 *   Checkout page 'Submit Order' button text
 *   Tax Label text
+*   Placeholder image source
 
 == Installation ==
 
@@ -55,6 +57,7 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 
 = 1.2.1-1 =
 * Added Checkout "Create Account" checkbox default customization
+* Added Placeholder image source customization
 * Moved settings to WooCommerce > Settings > Customizer
 * WooCommerce 2.2 Compatibility
 * Localization - Text domain changed from `wc-customizer` to `woocommerce-customizer`
