@@ -1,10 +1,10 @@
 === WooCommerce Customizer ===
-Contributors: maxrice, justinstern, skyverge
+Contributors: maxrice, justinstern, tamarazuk, skyverge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce
-Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 1.2.1
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 1.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,8 +53,13 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 
 == Changelog ==
 
+= 1.2.1-1 =
+* Moved settings to WooCommerce > Settings > Customizer
+* WooCommerce 2.2 Compatibility
+* Localization - Text domain changed from `wc-customizer` to `woocommerce-customizer`
+
 = 1.2.1 =
-* Fix missing compatibility class error 
+* Fix missing compatibility class error
 
 = 1.2 =
 * Fix issues with add to cart button text customizations in WooCommerce 2.1
