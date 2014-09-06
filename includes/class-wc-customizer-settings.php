@@ -67,10 +67,10 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	public function get_sections() {
 
 		return array(
-			'shop_loop'    => __( 'Shop Loop', 'wc-customizer' ),
-			'product_page' => __( 'Product Page', 'wc-customizer' ),
-			'checkout'     => __( 'Checkout', 'wc-customizer' ),
-			'misc'         => __( 'Misc', 'wc-customizer' )
+			'shop_loop'    => __( 'Shop Loop', 'woocommerce-customizer' ),
+			'product_page' => __( 'Product Page', 'woocommerce-customizer' ),
+			'checkout'     => __( 'Checkout', 'woocommerce-customizer' ),
+			'misc'         => __( 'Misc', 'woocommerce-customizer' )
 		);
 	}
 
@@ -152,70 +152,70 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				array(
 
 					array(
-						'title' => __( 'Add to Cart Button Text', 'wc-customizer' ),
+						'title' => __( 'Add to Cart Button Text', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'add_to_cart_text',
-						'title'    => __( 'Simple Product', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for simple products on all loop pages', 'wc-customizer' ),
+						'title'    => __( 'Simple Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for simple products on all loop pages', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'variable_add_to_cart_text',
-						'title'    => __( 'Variable Product', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for variable products on all loop pages', 'wc-customizer' ),
+						'title'    => __( 'Variable Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for variable products on all loop pages', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'grouped_add_to_cart_text',
-						'title'    => __( 'Grouped Product', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for grouped products on all loop pages', 'wc-customizer' ),
+						'title'    => __( 'Grouped Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for grouped products on all loop pages', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'external_add_to_cart_text',
-						'title'    => __( 'External Product', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for external products on all loop pages', 'wc-customizer' ),
+						'title'    => __( 'External Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for external products on all loop pages', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'out_of_stock_add_to_cart_text',
-						'title'    => __( 'Out of Stock Product', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for out of stock products on all loop pages', 'wc-customizer' ),
+						'title'    => __( 'Out of Stock Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for out of stock products on all loop pages', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Layout', 'wc-customizer' ),
+						'title' => __( 'Layout', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'loop_shop_per_page',
-						'title'    => __( 'Products displayed per page', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the number of products displayed per page', 'wc-customizer' ),
+						'title'    => __( 'Products displayed per page', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the number of products displayed per page', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'loop_shop_columns',
-						'title'    => __( 'Product columns displayed per page', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the number of columns displayed per page', 'wc-customizer' ),
+						'title'    => __( 'Product columns displayed per page', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the number of columns displayed per page', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_product_thumbnails_columns',
-						'title'    => __( 'Product thumbnail columns displayed', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the number of product thumbnail columns displayed', 'wc-customizer' ),
+						'title'    => __( 'Product thumbnail columns displayed', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the number of product thumbnail columns displayed', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
@@ -228,56 +228,56 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				array(
 
 					array(
-						'title' => __( 'Tab Titles', 'wc-customizer' ),
+						'title' => __( 'Tab Titles', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'woocommerce_product_description_tab_title',
-						'title'    => __( 'Product Description', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Production Description tab title', 'wc-customizer' ),
+						'title'    => __( 'Product Description', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Production Description tab title', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_product_additional_information_tab_title',
-						'title'    => __( 'Additional Information', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Additional Information tab title', 'wc-customizer' ),
+						'title'    => __( 'Additional Information', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Additional Information tab title', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Tab Content Headings', 'wc-customizer' ),
+						'title' => __( 'Tab Content Headings', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'woocommerce_product_description_heading',
-						'title'    => __( 'Product Description', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Product Description tab heading', 'wc-customizer' ),
+						'title'    => __( 'Product Description', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Product Description tab heading', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_product_additional_information_heading',
-						'title'    => __( 'Additional Information', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Additional Information tab heading', 'wc-customizer' ),
+						'title'    => __( 'Additional Information', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Additional Information tab heading', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Add to Cart Button Text', 'wc-customizer' ),
+						'title' => __( 'Add to Cart Button Text', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'single_add_to_cart_text',
-						'title'    => __( 'All Product Types', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Add to Cart button text on the single product page for all product type', 'wc-customizer' ),
+						'title'    => __( 'All Product Types', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Add to Cart button text on the single product page for all product type', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
@@ -289,42 +289,42 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				array(
 
 					array(
-						'title' => __( 'Messages', 'wc-customizer' ),
+						'title' => __( 'Messages', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'woocommerce_checkout_must_be_logged_in_message',
-						'title'    => __( 'Must be logged in text', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the message displayed when a customer must be logged in to checkout', 'wc-customizer' ),
+						'title'    => __( 'Must be logged in text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the message displayed when a customer must be logged in to checkout', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_checkout_coupon_message',
-						'title'    => __( 'Coupon text', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the message displayed if the coupon form is enabled on checkout', 'wc-customizer' ),
+						'title'    => __( 'Coupon text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the message displayed if the coupon form is enabled on checkout', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_checkout_login_message',
-						'title'    => __( 'Login text', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the message displayed if customers can login at checkout', 'wc-customizer' ),
+						'title'    => __( 'Login text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the message displayed if customers can login at checkout', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Button Text', 'wc-customizer' ),
+						'title' => __( 'Button Text', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'woocommerce_order_button_text',
-						'title'    => __( 'Submit Order button', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Place Order button text on checkout', 'wc-customizer' ),
+						'title'    => __( 'Submit Order button', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Place Order button text on checkout', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
@@ -337,28 +337,28 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				array(
 
 					array(
-						'title' => __( 'Tax', 'wc-customizer' ),
+						'title' => __( 'Tax', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
 
 					array(
 						'id'       => 'woocommerce_countries_tax_or_vat',
-						'title'    => __( 'Tax Label', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Taxes label. Defaults to Tax for USA, VAT for European countries', 'wc-customizer' ),
+						'title'    => __( 'Tax Label', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Taxes label. Defaults to Tax for USA, VAT for European countries', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_countries_inc_tax_or_vat',
-						'title'    => __( 'Including Tax Label', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT for European countries', 'wc-customizer' ),
+						'title'    => __( 'Including Tax Label', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT for European countries', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
 					array(
 						'id'       => 'woocommerce_countries_ex_tax_or_vat',
-						'title'    => __( 'Excluding Tax Label', 'wc-customizer' ),
-						'desc_tip' => __( 'Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT for European countries', 'wc-customizer' ),
+						'title'    => __( 'Excluding Tax Label', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT for European countries', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 
