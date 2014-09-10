@@ -393,11 +393,13 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				),
 		);
 
-		return isset( $settings[ $GLOBALS['current_section' ] ] ) ?  $settings[ $GLOBALS['current_section' ] ] : $settings['shop_loop'];
+		$current_section = isset( $GLOBALS['current_section'] ) ? $GLOBALS['current_section'] : 'shop_loop';
+
+		return isset( $settings[ $current_section ] ) ?  $settings[ $current_section ] : $settings['shop_loop'];
 	}
 
 
 }
 
 // setup settings
-$GLOBALS['wc_customizer']->settings = new WC_Customizer_Settings();
+return $GLOBALS['wc_customizer']->settings = new WC_Customizer_Settings();

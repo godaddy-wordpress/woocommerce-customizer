@@ -42,11 +42,11 @@ Most likely because a filter does not yet exist within WooCommerce, or a filter 
 
 = I found a bug! What do I do? =
 
-Please submit an issue on [Github](https://github.com/skyverge/woocommerce-customizer/) along with a description of the problem so we can fix it :)
+Please submit an issue on [GitHub](https://github.com/skyverge/woocommerce-customizer/) along with a description of the problem so we can fix it :)
 
 = Can I contribute to the plugin? =
 
-Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customizer/) and send a pull request.
+Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customizer/) and send a pull request.
 
 == Screenshots ==
 
@@ -54,6 +54,9 @@ Yes! Fork the plugin on [Github](https://github.com/skyverge/woocommerce-customi
 2. Customizations galore!
 
 == Changelog ==
+
+= 2.0.0-1 =
+* Fix error when upgrading to WooCommerce 2.2
 
 = 2.0.0 =
 * Added Checkout "Create Account" checkbox default customization
