@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Customizer 2.0.0\n"
+"Project-Id-Version: WooCommerce Customizer 2.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/skyverge/woocommerce-customizer/issues\n"
 "POT-Creation-Date: 2014-09-05 23:18:53+00:00\n"
