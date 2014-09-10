@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.0.0-1
+ * Version: 2.0.1
  * Text Domain: wc-customizer
  * Domain Path: /languages/
  *
@@ -84,7 +84,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.0.0-1';
+	const VERSION = '2.0.1';
 
 	/** @var \WC_Customizer_Settings instance */
 	public $settings;

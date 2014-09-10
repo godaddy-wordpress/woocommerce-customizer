@@ -55,7 +55,7 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 
 == Changelog ==
 
-= 2.0.0-1 =
+= 2.0.1 =
 * Fix error when upgrading to WooCommerce 2.2
 
 = 2.0.0 =
