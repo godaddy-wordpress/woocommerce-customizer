@@ -27,11 +27,13 @@ Here's the list of customizations you can make:
 *   Tax Label text
 *   Placeholder image source
 
+To make these changes, go to **WooCommerce &gt; Settings** and view the "Customizer" tab.
+
 == Installation ==
 
-1. Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory
+1. Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory or via the "Plugins &gt; Add New" menu
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to 'Customizer' under the WooCommerce menu
+3. Go to the 'Customizer' tab under WooCommerce &gt; Settings
 4. Start customizing!
 
 == Frequently Asked Questions ==
