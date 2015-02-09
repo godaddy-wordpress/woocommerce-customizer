@@ -1,9 +1,9 @@
 === WooCommerce Customizer ===
-Contributors: maxrice, justinstern, tamarazuk, skyverge
+Contributors: maxrice, tamarazuk, skyverge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
-Tags: woocommerce
+Tags: woocommerce, woocommerce shop, woocommerce filters
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 2.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,9 +12,11 @@ Helps you customize WooCommerce without writing any code!
 
 == Description ==
 
-WooCommerce includes a lot of filters so you can customize button text, labels, and more -- but you have to write PHP
+WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP
 code to use them. This plugin provides a settings page where you can add your customizations and save them without
 needing to write any code or modify any templates, which is helpful for quick change testing.
+
+> Requires WooCommerce 2.1+
 
 Here's the list of customizations you can make:
 
@@ -29,9 +31,17 @@ Here's the list of customizations you can make:
 
 To make these changes, go to **WooCommerce &gt; Settings** and view the "Customizer" tab.
 
+= Support Details =
+We do support our free plugins and extensions, but please understand that support for premium products takes priority. We typically check the forums every few days (with a maximum delay of one week).
+
+= More Details =
+ - See the [product page](http://www.skyverge.com/product/woocommerce-customizer/) for full details.
+ - View more of SkyVerge's [free WooCommerce extensions](http://profiles.wordpress.org/skyverge/)
+ - View all [SkyVerge WooCommerce extensions](http://www.skyverge.com/shop/)
+
 == Installation ==
 
-1. Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory or via the "Plugins &gt; Add New" menu
+1. Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory or upload the zip file via the "Plugins &gt; Add New" menu
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to the 'Customizer' tab under WooCommerce &gt; Settings
 4. Start customizing!
@@ -52,8 +62,7 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 
 == Screenshots ==
 
-1. Settings Page
-2. Customizations galore!
+1. Settings Page for customizations galore!
 
 == Changelog ==
 
