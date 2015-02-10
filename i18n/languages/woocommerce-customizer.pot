@@ -34,7 +34,7 @@ msgid "Checkout"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:73
-#: build/includes/class-wc-customizer-settings.php:320
+#: build/includes/class-wc-customizer-settings.php:321
 #: includes/class-wc-customizer-settings.php:73
 #: includes/class-wc-customizer-settings.php:321
 msgid "Misc"
@@ -215,96 +215,96 @@ msgstr ""
 msgid "Changes the message displayed if the coupon form is enabled on checkout"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:312
+#: build/includes/class-wc-customizer-settings.php:313
 #: includes/class-wc-customizer-settings.php:313
 msgid "Login text"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:313
+#: build/includes/class-wc-customizer-settings.php:314
 #: includes/class-wc-customizer-settings.php:314
 msgid "Changes the message displayed if customers can login at checkout"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:326
+#: build/includes/class-wc-customizer-settings.php:327
 #: includes/class-wc-customizer-settings.php:327
 msgid "Create Account checkbox default"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:327
+#: build/includes/class-wc-customizer-settings.php:328
 #: includes/class-wc-customizer-settings.php:328
 msgid "Control the default state for the Create Account checkbox"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:330
+#: build/includes/class-wc-customizer-settings.php:331
 #: includes/class-wc-customizer-settings.php:331
 msgid "Checked"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:331
+#: build/includes/class-wc-customizer-settings.php:332
 #: includes/class-wc-customizer-settings.php:332
 msgid "Unchecked"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:338
+#: build/includes/class-wc-customizer-settings.php:339
 #: includes/class-wc-customizer-settings.php:339
 msgid "Submit Order button"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:339
+#: build/includes/class-wc-customizer-settings.php:340
 #: includes/class-wc-customizer-settings.php:340
 msgid "Changes the Place Order button text on checkout"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:352
+#: build/includes/class-wc-customizer-settings.php:353
 #: includes/class-wc-customizer-settings.php:353
 msgid "Tax"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:358
+#: build/includes/class-wc-customizer-settings.php:359
 #: includes/class-wc-customizer-settings.php:359
 msgid "Tax Label"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:359
+#: build/includes/class-wc-customizer-settings.php:360
 #: includes/class-wc-customizer-settings.php:360
 msgid "Changes the Taxes label. Defaults to Tax for USA, VAT for European countries"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:365
+#: build/includes/class-wc-customizer-settings.php:366
 #: includes/class-wc-customizer-settings.php:366
 msgid "Including Tax Label"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:366
+#: build/includes/class-wc-customizer-settings.php:367
 #: includes/class-wc-customizer-settings.php:367
 msgid ""
 "Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT "
 "for European countries"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:372
+#: build/includes/class-wc-customizer-settings.php:373
 #: includes/class-wc-customizer-settings.php:373
 msgid "Excluding Tax Label"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:373
+#: build/includes/class-wc-customizer-settings.php:374
 #: includes/class-wc-customizer-settings.php:374
 msgid ""
 "Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT "
 "for European countries"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:380
+#: build/includes/class-wc-customizer-settings.php:381
 #: includes/class-wc-customizer-settings.php:381
 msgid "Images"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:386
+#: build/includes/class-wc-customizer-settings.php:387
 #: includes/class-wc-customizer-settings.php:387
 msgid "Placeholder Image source"
 msgstr ""
 
-#: build/includes/class-wc-customizer-settings.php:387
+#: build/includes/class-wc-customizer-settings.php:388
 #: includes/class-wc-customizer-settings.php:388
 msgid "Change the default placeholder image by setting this to a valid image URL"
 msgstr ""
