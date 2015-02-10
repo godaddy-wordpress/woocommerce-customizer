@@ -125,7 +125,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 			if ( ! empty( $_POST[ $field['id'] ] ) ) {
 
-				$this->customizations[ $field['id'] ] = wp_kses_post( $_POST[ $field['id'] ] );
+				$this->customizations[ $field['id'] ] = wp_kses_post( stripslashes( $_POST[ $field['id'] ] ) );
 
 			} elseif ( isset( $this->customizations[ $field['id'] ] ) ) {
 
@@ -304,7 +304,8 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 						'id'       => 'woocommerce_checkout_coupon_message',
 						'title'    => __( 'Coupon text', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes the message displayed if the coupon form is enabled on checkout', 'woocommerce-customizer' ),
-						'type'     => 'text'
+						'type'     => 'text',
+						'desc'     => sprintf( '<code>%s ' . esc_attr( '<a href="#" class="showcoupon">%s</a>' ) . '</code>', 'Have a coupon?', 'Click here to enter your code' ),
 					),
 
 					array(

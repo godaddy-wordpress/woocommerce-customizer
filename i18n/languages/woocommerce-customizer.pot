@@ -1,15 +1,15 @@
-# Copyright (C) 2014 SkyVerge
+# Copyright (C) 2015 SkyVerge
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Customizer 2.0.1\n"
+"Project-Id-Version: WooCommerce Customizer 2.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/skyverge/woocommerce-customizer/issues\n"
 "POT-Creation-Date: 2014-09-05 23:18:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -36,7 +36,7 @@ msgstr ""
 #: build/includes/class-wc-customizer-settings.php:73
 #: build/includes/class-wc-customizer-settings.php:320
 #: includes/class-wc-customizer-settings.php:73
-#: includes/class-wc-customizer-settings.php:320
+#: includes/class-wc-customizer-settings.php:321
 msgid "Misc"
 msgstr ""
 
@@ -216,96 +216,96 @@ msgid "Changes the message displayed if the coupon form is enabled on checkout"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:312
-#: includes/class-wc-customizer-settings.php:312
+#: includes/class-wc-customizer-settings.php:313
 msgid "Login text"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:313
-#: includes/class-wc-customizer-settings.php:313
+#: includes/class-wc-customizer-settings.php:314
 msgid "Changes the message displayed if customers can login at checkout"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:326
-#: includes/class-wc-customizer-settings.php:326
+#: includes/class-wc-customizer-settings.php:327
 msgid "Create Account checkbox default"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:327
-#: includes/class-wc-customizer-settings.php:327
+#: includes/class-wc-customizer-settings.php:328
 msgid "Control the default state for the Create Account checkbox"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:330
-#: includes/class-wc-customizer-settings.php:330
+#: includes/class-wc-customizer-settings.php:331
 msgid "Checked"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:331
-#: includes/class-wc-customizer-settings.php:331
+#: includes/class-wc-customizer-settings.php:332
 msgid "Unchecked"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:338
-#: includes/class-wc-customizer-settings.php:338
+#: includes/class-wc-customizer-settings.php:339
 msgid "Submit Order button"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:339
-#: includes/class-wc-customizer-settings.php:339
+#: includes/class-wc-customizer-settings.php:340
 msgid "Changes the Place Order button text on checkout"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:352
-#: includes/class-wc-customizer-settings.php:352
+#: includes/class-wc-customizer-settings.php:353
 msgid "Tax"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:358
-#: includes/class-wc-customizer-settings.php:358
+#: includes/class-wc-customizer-settings.php:359
 msgid "Tax Label"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:359
-#: includes/class-wc-customizer-settings.php:359
+#: includes/class-wc-customizer-settings.php:360
 msgid "Changes the Taxes label. Defaults to Tax for USA, VAT for European countries"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:365
-#: includes/class-wc-customizer-settings.php:365
+#: includes/class-wc-customizer-settings.php:366
 msgid "Including Tax Label"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:366
-#: includes/class-wc-customizer-settings.php:366
+#: includes/class-wc-customizer-settings.php:367
 msgid ""
 "Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT "
 "for European countries"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:372
-#: includes/class-wc-customizer-settings.php:372
+#: includes/class-wc-customizer-settings.php:373
 msgid "Excluding Tax Label"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:373
-#: includes/class-wc-customizer-settings.php:373
+#: includes/class-wc-customizer-settings.php:374
 msgid ""
 "Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT "
 "for European countries"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:380
-#: includes/class-wc-customizer-settings.php:380
+#: includes/class-wc-customizer-settings.php:381
 msgid "Images"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:386
-#: includes/class-wc-customizer-settings.php:386
+#: includes/class-wc-customizer-settings.php:387
 msgid "Placeholder Image source"
 msgstr ""
 
 #: build/includes/class-wc-customizer-settings.php:387
-#: includes/class-wc-customizer-settings.php:387
+#: includes/class-wc-customizer-settings.php:388
 msgid "Change the default placeholder image by setting this to a valid image URL"
 msgstr ""
 
