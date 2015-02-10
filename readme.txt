@@ -69,7 +69,7 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 = 2.1.0 =
 * Misc - WooCommerce 2.3 Compatibility
 
-= 2.1.0 =
+= 2.0.1 =
 * Fix error when upgrading to WooCommerce 2.2
 
 = 2.0.0 =
