@@ -18,7 +18,7 @@ needing to write any code or modify any templates, which is helpful for quick ch
 
 > Requires WooCommerce 2.1+
 
-Here's the list of customizations you can make:
+Here are some customizations you can make:
 
 *   Add to Cart button text for all product types (within the shop loop and on a single product page)
 *   The number of products displayed per page
@@ -30,6 +30,8 @@ Here's the list of customizations you can make:
 *   Placeholder image source
 
 To make these changes, go to **WooCommerce &gt; Settings** and view the "Customizer" tab.
+
+> **Note**: This plugin does not support multisite and cannot be network activated. To use this on a multisite network, you must install the plugin individually on each site.
 
 = Support Details =
 We do support our free plugins and extensions, but please understand that support for premium products takes priority. We typically check the forums every few days (with a maximum delay of one week).
@@ -51,6 +53,10 @@ We do support our free plugins and extensions, but please understand that suppor
 = Why can't I customize xyz? =
 
 Most likely because a filter does not yet exist within WooCommerce, or a filter does exist but is too complicated to be of use with this plugin.
+
+= Why don't the settings show up under the WooCommerce Settings? =
+
+Do you have this network activated for a multisite installation? If so, you'll need to remove the plugin, then install it on each child site as needed, as the plugin does not support being network activated.
 
 = I found a bug! What do I do? =
 
