@@ -10,6 +10,7 @@ module.exports = function( grunt ) {
 			options: {
 				cwd: '',
 				domainPath: 'i18n/languages',
+				exclude: [ 'build/.*' ],
 				potFilename: grunt.option( 'plugin-slug' ) + '.pot',
 				potHeaders: { 'report-msgid-bugs-to': 'https://github.com/skyverge/' + grunt.option( 'plugin-slug' ) + '/issues' },
 				processPot: function( pot ) {
