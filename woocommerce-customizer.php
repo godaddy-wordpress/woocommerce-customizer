@@ -6,7 +6,7 @@
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
  * Version: 2.1.0
- * Text Domain: wc-customizer
+ * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
  * Copyright: (c) 2013-2014 SkyVerge, Inc. (info@skyverge.com)
