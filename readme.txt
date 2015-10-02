@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce, woocommerce shop, woocommerce filters
 Requires at least: 3.8
 Tested up to: 4.3.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,6 +71,9 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 1. Settings Page for customizations galore!
 
 == Changelog ==
+
+= 2.1.1 =
+* Misc - Standardize the translation string
 
 = 2.1.0 =
 * Misc - WooCommerce 2.3 Compatibility
