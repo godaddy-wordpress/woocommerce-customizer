@@ -3,7 +3,9 @@ Contributors: maxrice, tamarazuk, skyverge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters
 Requires at least: 3.8
-Tested up to: 4.3.1
+Tested up to: 4.4
+Requires WooCommerce at least: 2.1
+Tested WooCommerce up to: 2.4.10
 Stable tag: 2.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
