@@ -1,5 +1,5 @@
 === WooCommerce Customizer ===
-Contributors: maxrice, tamarazuk, skyverge
+Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters
 Requires at least: 3.8
