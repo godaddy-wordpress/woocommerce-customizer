@@ -1,6 +1,6 @@
 {
 	"name": "woocommerce-customizer",
-	"version": "1.2.1",
+	"version": "2.1.0",
 	"author": "SkyVerge Team",
 	"homepage": "http://www.skyverge.com",
 	"repository": {
@@ -19,7 +19,7 @@
 		"grunt-contrib-copy": "~0.5.0",
 		"grunt-newer": "~0.7.0",
 		"grunt-notify": "~0.3.0",
-		"grunt-wp-deploy": "~1.0.3",
+		"grunt-wp-deploy": "~1.1.0",
 		"grunt-wp-i18n": "~0.4.5",
 		"load-grunt-tasks": "~0.6.0",
 		"time-grunt": "~0.4.0",
