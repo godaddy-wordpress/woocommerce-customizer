@@ -178,13 +178,6 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array(
-						'id'       => 'external_add_to_cart_text',
-						'title'    => __( 'External Product', 'woocommerce-customizer' ),
-						'desc_tip' => __( 'Changes the add to cart button text for external products on all loop pages', 'woocommerce-customizer' ),
-						'type'     => 'text'
-					),
-
-					array(
 						'id'       => 'out_of_stock_add_to_cart_text',
 						'title'    => __( 'Out of Stock Product', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes the add to cart button text for out of stock products on all loop pages', 'woocommerce-customizer' ),
