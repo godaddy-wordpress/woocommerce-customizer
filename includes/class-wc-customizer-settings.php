@@ -18,7 +18,7 @@
  *
  * @package     WC-Customizer/Classes
  * @author      SkyVerge
- * @copyright   Copyright (c) 2013-2014, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2013-2016, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -44,17 +44,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		$this->id    = 'customizer';
 		$this->label = __( 'Customizer', 'woocommerce-customizer' );
 
-		// add tab
-		add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
-
-		// show sections
-		add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
-
-		// show settings
-		add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
-
-		// save settings
-		add_action( 'woocommerce_settings_save_' . $this->id, array( $this, 'save' ) );
+		parent::__construct();
 
 		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
 	}
