@@ -1,6 +1,8 @@
 *.zip
 .DS_Store
 
+.idea
+
 # Grunt.js SASS cache files
 /.sass-cache
 
