@@ -5,11 +5,11 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.2.0
+ * Version: 2.3.0
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
- * Copyright: (c) 2013-2014 SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2013-2016 SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,19 +21,20 @@
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) or exit;
 
 // Check if WooCommerce is active
 if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
 	return;
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), '2.3.0', '<' ) ) {
+if ( version_compare( get_option( 'woocommerce_db_version' ), '2.4.13', '<' ) ) {
 
 	function woocommerce_customizer_outdated_version_notice() {
 
+		/* translators: Placeholders: %1$s - <strong> tag, %2$s - </strong> tag, %3$s - <a> tag, %4$s - </a> tag */
 		$message = sprintf(
-			__( '%sWooCommerce Customizer is inactive.%s This version requires WooCommerce 2.3 or newer. Please %supdate WooCommerce to version 2.3 or newer%s', 'woocommerce-customizer' ),
+			__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.4.13 or newer. Please %3$supdate WooCommerce to version 2.4.13 or newer%4$s', 'woocommerce-customizer' ),
 			'<strong>',
 			'</strong>',
 			'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -84,7 +85,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.2.0';
+	const VERSION = '2.3.0';
 
 	/** @var \WC_Customizer_Settings instance */
 	public $settings;
