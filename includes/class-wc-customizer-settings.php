@@ -386,4 +386,4 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 }
 
 // setup settings
-return $GLOBALS['wc_customizer']->settings = new WC_Customizer_Settings();
+return wc_customizer()->settings = new WC_Customizer_Settings();

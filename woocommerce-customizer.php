@@ -87,6 +87,9 @@ class WC_Customizer {
 	/** plugin version number */
 	const VERSION = '2.3.0';
 
+	/** @var \WC_Customizer single instance of this plugin */
+	protected static $instance;
+
 	/** @var \WC_Customizer_Settings instance */
 	public $settings;
 
@@ -118,6 +121,30 @@ class WC_Customizer {
 		}
 
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
+	}
+
+
+	/**
+	 * Cloning instances is forbidden due to singleton pattern.
+	 *
+	 * @since 2.3.0
+	 */
+	public function __clone() {
+
+		/* translators: Placeholders: %s - plugin name */
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
+	}
+
+
+	/**
+	 * Unserializing instances is forbidden due to singleton pattern.
+	 *
+	 * @since 2.3.0
+	 */
+	public function __wakeup() {
+
+		/* translators: Placeholders: %s - plugin name */
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
 	}
 
 
@@ -289,6 +316,24 @@ class WC_Customizer {
 	}
 
 
+	/** Helper methods ******************************************************/
+
+
+	/**
+	 * Main Customizer Instance, ensures only one instance is/can be loaded
+	 *
+	 * @since 2.3.0
+	 * @see wc_customizer()
+	 * @return \WC_Customizer
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+
 	/** Lifecycle methods ******************************************************/
 
 
@@ -332,8 +377,20 @@ class WC_Customizer {
 
 
 /**
+ * Returns the One True Instance of Customizer
+ *
+ * @since 2.3.0
+ * @return \WC_Customizer
+ */
+function wc_customizer() {
+	return WC_Customizer::instance();
+}
+
+
+/**
  * The WC_Customizer global object
+ * @deprecated 2.3.0
  * @name $wc_customizer
  * @global WC_Customizer $GLOBALS['wc_customizer']
  */
-$GLOBALS['wc_customizer'] = new WC_Customizer();
+$GLOBALS['wc_customizer'] = wc_customizer();

@@ -246,19 +246,29 @@ msgstr ""
 #. <a> tag, %4$s - </a> tag
 msgid ""
 "%1$sWooCommerce Customizer is inactive.%2$s This version requires "
-"WooCommerce 2.4.13 or newer. Please %3$ssupdate WooCommerce to version 2.3 "
-"or newer%5$s"
+"WooCommerce 2.4.13 or newer. Please %3$supdate WooCommerce to version "
+"2.4.13 or newer%4$s"
 msgstr ""
 
-#: woocommerce-customizer.php:282
+#: woocommerce-customizer.php:135
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot clone instances of %s."
+msgstr ""
+
+#: woocommerce-customizer.php:147
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot unserialize instances of %s."
+msgstr ""
+
+#: woocommerce-customizer.php:309
 msgid "Configure"
 msgstr ""
 
-#: woocommerce-customizer.php:283
+#: woocommerce-customizer.php:310
 msgid "FAQ"
 msgstr ""
 
-#: woocommerce-customizer.php:284
+#: woocommerce-customizer.php:311
 msgid "Support"
 msgstr ""
 
