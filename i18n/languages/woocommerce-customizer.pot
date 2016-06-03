@@ -241,34 +241,33 @@ msgstr ""
 msgid "Change the default placeholder image by setting this to a valid image URL"
 msgstr ""
 
-#: woocommerce-customizer.php:37
-#. translators: Placeholders: %1$s - <strong> tag, %2$s - </strong> tag, %3$s -
-#. <a> tag, %4$s - </a> tag
+#: woocommerce-customizer.php:121
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot clone instances of %s."
+msgstr ""
+
+#: woocommerce-customizer.php:133
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot unserialize instances of %s."
+msgstr ""
+
+#: woocommerce-customizer.php:226
+#. translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
 msgid ""
 "%1$sWooCommerce Customizer is inactive.%2$s This version requires "
 "WooCommerce 2.4.13 or newer. Please %3$supdate WooCommerce to version "
 "2.4.13 or newer%4$s"
 msgstr ""
 
-#: woocommerce-customizer.php:135
-#. translators: Placeholders: %s - plugin name
-msgid "You cannot clone instances of %s."
-msgstr ""
-
-#: woocommerce-customizer.php:147
-#. translators: Placeholders: %s - plugin name
-msgid "You cannot unserialize instances of %s."
-msgstr ""
-
-#: woocommerce-customizer.php:309
+#: woocommerce-customizer.php:333
 msgid "Configure"
 msgstr ""
 
-#: woocommerce-customizer.php:310
+#: woocommerce-customizer.php:334
 msgid "FAQ"
 msgstr ""
 
-#: woocommerce-customizer.php:311
+#: woocommerce-customizer.php:335
 msgid "Support"
 msgstr ""
 
