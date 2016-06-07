@@ -6,7 +6,7 @@ Requires at least: 4.1
 Tested up to: 4.5.2
 Requires WooCommerce at least: 2.4.13
 Tested WooCommerce up to: 2.6.0
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,6 +73,9 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 1. Settings Page for customizations galore!
 
 == Changelog ==
+
+= 2.3.1 =
+* Fix - Fixes "headers already sent" error if WooCommerce is out of date
 
 = 2.3.0 =
 * Misc - Added support for WooCommerce 2.6
