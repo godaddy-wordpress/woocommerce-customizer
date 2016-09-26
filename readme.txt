@@ -3,9 +3,9 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters
 Requires at least: 4.1
-Tested up to: 4.5.3
+Tested up to: 4.6.1
 Requires WooCommerce at least: 2.4.13
-Tested WooCommerce up to: 2.6.2
+Tested WooCommerce up to: 2.6.4
 Stable tag: 2.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -73,6 +73,9 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 1. Settings Page for customizations galore!
 
 == Changelog ==
+
+= 2.3.1-1 =
+ * Localization - Includes Persian translation, props [Saakhtani team](http://saakhtani.ir/)!
 
 = 2.3.1 =
 * Fix - Fixes "headers already sent" error if WooCommerce is out of date
