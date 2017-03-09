@@ -25,14 +25,12 @@ defined( 'ABSPATH' ) or exit;
 
 // Check if WooCommerce is active
 if ( ! WC_Customizer::is_woocommerce_active() ) {
-
 	add_action( 'admin_notices', 'wc_customizer_render_wc_inactive_notice' );
 	return;
 }
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), '2.4.13', '<' ) ) {
-
+if ( version_compare( get_option( 'woocommerce_db_version' ), '2.5.5', '<' ) ) {
 	add_action( 'admin_notices', 'wc_customizer_render_outdated_wc_version_notice' );
 	return;
 }
@@ -47,7 +45,7 @@ function wc_customizer_render_outdated_wc_version_notice() {
 
 	$message = sprintf(
 		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.4.13 or newer. Please %3$supdate WooCommerce to version 2.4.13 or newer%4$s', 'woocommerce-customizer' ),
+		__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce to version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
 		'<strong>',
 		'</strong>',
 		'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -67,7 +65,7 @@ function wc_customizer_render_wc_inactive_notice() {
 
 	$message = sprintf(
 		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.4.13 or newer%4$s', 'woocommerce-customizer' ),
+		__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
 		'<strong>',
 		'</strong>',
 		'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -442,7 +440,10 @@ function wc_customizer() {
 
 /**
  * The WC_Customizer global object
+ * TODO: Remove with WC 2.8 compat {BR 2017-03-09}
+ *
  * @deprecated 2.3.0
+ *
  * @name $wc_customizer
  * @global WC_Customizer $GLOBALS['wc_customizer']
  */
