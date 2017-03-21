@@ -5,8 +5,8 @@ Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.1
 Tested up to: 4.7.3
 WC requires at least: 2.5.5
-WC tested up to: 2.7.0
 Stable tag: 2.4.0-dev
+WC tested up to: 3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,7 +77,7 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 = 2.4.0-dev =
 * Fix - Image placeholder replacements are only shown in the shop, not in the WP admin
 * Localization - Includes Persian translation, props [Saakhtani team](http://saakhtani.ir/)!
-* Misc - Added support for WooCommerce 2.7
+* Misc - Added support for WooCommerce 3.0
 * Misc - Removed support for WooCommerce 2.4
 
 = 2.3.1 =

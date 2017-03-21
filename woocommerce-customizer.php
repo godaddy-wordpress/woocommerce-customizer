@@ -440,7 +440,7 @@ function wc_customizer() {
 
 /**
  * The WC_Customizer global object
- * TODO: Remove with WC 2.8 compat {BR 2017-03-09}
+ * TODO: Remove with WC 3.1 compat {BR 2017-03-09}
  *
  * @deprecated 2.3.0
  *
