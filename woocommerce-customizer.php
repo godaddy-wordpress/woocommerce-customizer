@@ -5,11 +5,11 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.3.2-dev
+ * Version: 2.4.0
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
- * Copyright: (c) 2013-2016 SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2013-2017, SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,7 +17,7 @@
  * @package   WC-Customizer
  * @author    SkyVerge
  * @category  Utility
- * @copyright Copyright (c) 2013-2016, SkyVerge, Inc.
+ * @copyright Copyright (c) 2013-2017, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -25,14 +25,12 @@ defined( 'ABSPATH' ) or exit;
 
 // Check if WooCommerce is active
 if ( ! WC_Customizer::is_woocommerce_active() ) {
-
 	add_action( 'admin_notices', 'wc_customizer_render_wc_inactive_notice' );
 	return;
 }
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), '2.4.13', '<' ) ) {
-
+if ( version_compare( get_option( 'woocommerce_db_version' ), '2.5.5', '<' ) ) {
 	add_action( 'admin_notices', 'wc_customizer_render_outdated_wc_version_notice' );
 	return;
 }
@@ -47,7 +45,7 @@ function wc_customizer_render_outdated_wc_version_notice() {
 
 	$message = sprintf(
 		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.4.13 or newer. Please %3$supdate WooCommerce to version 2.4.13 or newer%4$s', 'woocommerce-customizer' ),
+		__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce to version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
 		'<strong>',
 		'</strong>',
 		'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -67,7 +65,7 @@ function wc_customizer_render_wc_inactive_notice() {
 
 	$message = sprintf(
 		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.4.13 or newer%4$s', 'woocommerce-customizer' ),
+		__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
 		'<strong>',
 		'</strong>',
 		'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -113,7 +111,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.3.2-dev';
+	const VERSION = '2.4.0';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -442,7 +440,10 @@ function wc_customizer() {
 
 /**
  * The WC_Customizer global object
+ * TODO: Remove with WC 3.1 compat {BR 2017-03-09}
+ *
  * @deprecated 2.3.0
+ *
  * @name $wc_customizer
  * @global WC_Customizer $GLOBALS['wc_customizer']
  */

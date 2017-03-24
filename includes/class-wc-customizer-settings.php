@@ -18,7 +18,7 @@
  *
  * @package     WC-Customizer/Classes
  * @author      SkyVerge
- * @copyright   Copyright (c) 2013-2016, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2013-2017, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -49,9 +49,11 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
 	}
 
+
 	/**
 	 * Get sections
 	 *
+	 * @since 2.0.0
 	 * @return array
 	 */
 	public function get_sections() {
@@ -63,6 +65,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 			'misc'         => __( 'Misc', 'woocommerce-customizer' )
 		);
 	}
+
 
 	/**
 	 * Render the settings for the current section
