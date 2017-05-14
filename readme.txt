@@ -14,26 +14,25 @@ Helps you customize WooCommerce without writing any code!
 
 == Description ==
 
-WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP
-code to use them. This plugin provides a settings page where you can add your customizations and save them without
-needing to write any code or modify any templates, which is helpful for quick change testing.
+WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP code to use them. This plugin provides a settings page where you can add your customizations and save them without needing to write any code or modify any templates, which is helpful for quick change testing.
 
 > **Requires** WooCommerce 2.5.5+
 
 Here are some customizations you can make:
 
 * Add to Cart button text for different product types (within the shop loop and on a single product page)
+* Sales badge text for the shop or product pages
 * The number of products displayed per page
-* Heading text for the 'Product Description' and 'Additional Information' tab.
+* Heading text for the "Product Description" and "Additional Information" tab.
 * Checkout page coupon / login text
 * Checkout page "Create Account" checkbox default
-* Checkout page 'Submit Order' button text
+* Checkout page "Submit Order" button text
 * Tax Label text
 * Placeholder image source
 
 To make these changes, go to **WooCommerce &gt; Settings** and view the "Customizer" tab.
 
-> **Note**: This plugin does not support multisite and cannot be network activated. To use this on a multisite network, you must activate the plugin individually on each site.
+> **Note**: This plugin does not support being network activated on multisite. To use this on a multisite network, you must activate the plugin individually on each site.
 
 = Support Details =
 We do support our free plugins and extensions, but please understand that support for premium products takes priority. We typically check the forums every few days (with a maximum delay of one week).
@@ -66,11 +65,11 @@ Please submit an issue on [GitHub](https://github.com/skyverge/woocommerce-custo
 
 = Can I contribute to the plugin? =
 
-Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customizer/) and send a pull request.
+Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-customizer/) repository and send a pull request.
 
 == Screenshots ==
 
-1. Settings Page for customizations galore!
+1. Settings Page to start customizing!
 
 == Changelog ==
 
