@@ -368,7 +368,7 @@ class WC_Customizer {
 			if ( false !== strpos( $text, '{percent}' ) ) {
 
 				$percent = $this->get_sale_percentage( $product );
-				$text = str_replace( '{percent}', "{$percent}%", $text );
+				$text    = str_replace( '{percent}', "{$percent}%", $text );
 			}
 
 			$html = "<span class='onsale'>{$text}</span>";
@@ -382,7 +382,7 @@ class WC_Customizer {
 			if ( false !== strpos( $text, '{percent}' ) ) {
 
 				$percent = $this->get_sale_percentage( $product );
-				$text = str_replace( '{percent}', "{$percent}%", $text );
+				$text    = str_replace( '{percent}', "{$percent}%", $text );
 			}
 
 			$html = "<span class='onsale'>{$text}</span>";
@@ -407,7 +407,7 @@ class WC_Customizer {
 
 		$custom_actions = array(
 			'configure' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=wc-settings&tab=customizer&section=shop_loop' ), __( 'Configure', 'woocommerce-customizer' ) ),
-			'faq'       => sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/plugins/woocommerce-customizer/faq/', __( 'FAQ', 'woocommerce-customizer' ) ),
+			'faq'       => sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/plugins/woocommerce-customizer/#faq', __( 'FAQ', 'woocommerce-customizer' ) ),
 			'support'   => sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/support/plugin/woocommerce-customizer', __( 'Support', 'woocommerce-customizer' ) ),
 		);
 
