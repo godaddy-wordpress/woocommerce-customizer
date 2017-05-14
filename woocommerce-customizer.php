@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.4.0
+ * Version: 2.5.0-dev
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -111,7 +111,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.4.0';
+	const VERSION = '2.5.0-dev';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -221,6 +221,10 @@ class WC_Customizer {
 					if ( ! is_admin() ) {
 						add_filter( $filter_name, array( $this, 'customize' ) );
 					}
+
+				} elseif( 'loop_sale_flash_text' === $filter_name || 'single_sale_flash_text' === $filter_name ) {
+
+					add_filter( 'woocommerce_sale_flash', array( $this, 'customize_woocommerce_sale_flash' ), 50, 3 );
 
 				} else {
 
@@ -343,6 +347,35 @@ class WC_Customizer {
 	}
 
 
+	/**
+	 * Apply the shop loop sale flash text customization.
+	 *
+	 * @since 2.5.0-dev
+	 *
+	 * @param string $html add to cart flash HTML
+	 * @param \WP_Post $_ post object, unused
+	 * @param \WC_Product $product the prdouct object
+	 * @return string updated HTML
+	 */
+	public function customize_woocommerce_sale_flash( $html, $_, $product ) {
+
+		$percent = $this->get_sale_percentage( $product );
+
+		if ( is_product() && isset( $this->filters['single_sale_flash_text'] ) ) {
+
+			$text = str_replace( '{percent}', "{$percent}%", $this->filters['single_sale_flash_text'] );
+			$html = "<span class='onsale'>{$text}</span>";
+
+		} elseif ( ! is_product() && isset( $this->filters['loop_sale_flash_text'] ) ) {
+
+			$text = str_replace( '{percent}', "{$percent}%", $this->filters['loop_sale_flash_text'] );
+			$html = "<span class='onsale'>{$text}</span>";
+		}
+
+		return $html;
+	}
+
+
 	/** Admin methods ******************************************************/
 
 
@@ -368,6 +401,76 @@ class WC_Customizer {
 
 
 	/** Helper methods ******************************************************/
+
+
+	/**
+	 * Helper to get the percent discount for a product on sale.
+	 *
+	 * @since 2.5.0-dev
+	 *
+	 * @param \WC_Product $product product instance
+	 * @return string percentage discount
+	 */
+	private function get_sale_percentage( $product ) {
+
+		$child_sale_percents = array();
+		$percentage          = '0';
+
+		if ( $product->is_type( 'grouped' ) || $product->is_type( 'variable' ) ) {
+
+			foreach ( $product->get_children() as $child_id ) {
+
+				$child = wc_get_product( $child_id );
+
+				if ( $child->is_on_sale() ) {
+
+					$regular_price         = $child->get_regular_price();
+					$sale_price            = $child->get_sale_price();
+					$child_sale_percents[] = $this->calculate_sale_percentage( $regular_price, $sale_price );
+				}
+			}
+
+			// filter out duplicate values
+			$child_sale_percents = array_unique( $child_sale_percents );
+
+			// only add "up to" if there's > 1 percentage possible
+			if ( ! empty ( $child_sale_percents ) ) {
+
+				/* translators: Placeholder: %s - sale percentage */
+				$percentage = count( $child_sale_percents ) > 1 ? sprintf( esc_html__( 'up to %s', 'woocommerce-customizer' ), max( $child_sale_percents ) ) : current( $child_sale_percents );
+			}
+
+		} else {
+
+			$percentage = $this->calculate_sale_percentage( $product->get_regular_price(), $product->get_sale_price() );
+		}
+
+		return $percentage;
+	}
+
+
+	/**
+	 * Calculates a sales percentage difference given regular and sale prices for a product.
+	 *
+	 * @since 2.5.0-dev
+	 *
+	 * @param string $regular_price product regular price
+	 * @param string $sale_price product sale price
+	 * @return float percentage difference
+	 */
+	private function calculate_sale_percentage( $regular_price, $sale_price ) {
+
+		$percent = 0;
+		$regular = (float) $regular_price;
+		$sale    = (float) $sale_price;
+
+		// in case of free products so we don't divide by 0
+		if ( $regular ) {
+			$percent = round( ( ( $regular - $sale ) / $regular ) * 100 );
+		}
+
+		return $percent;
+	}
 
 
 	/**

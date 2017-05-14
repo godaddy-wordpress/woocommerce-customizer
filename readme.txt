@@ -3,10 +3,10 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.1
-Tested up to: 4.7.3
+Tested up to: 4.7.4
 WC requires at least: 2.5.5
-WC tested up to: 3.0
-Stable tag: 2.4.0
+WC tested up to: 3.0.7
+Stable tag: 2.5.0-dev
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,6 +73,9 @@ Yes! Fork the plugin on [GitHub](https://github.com/skyverge/woocommerce-customi
 1. Settings Page for customizations galore!
 
 == Changelog ==
+
+= 2.5.0-dev =
+* Feature - Added sales badge text customization
 
 = 2.4.0 =
 * Fix - Image placeholder replacements are only shown in the shop, not in the WP admin
