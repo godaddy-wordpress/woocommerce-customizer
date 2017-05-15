@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.0-dev
+ * Version: 2.5.0
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -111,7 +111,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.5.0-dev';
+	const VERSION = '2.5.0';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -350,7 +350,7 @@ class WC_Customizer {
 	/**
 	 * Apply the shop loop sale flash text customization.
 	 *
-	 * @since 2.5.0-dev
+	 * @since 2.5.0
 	 *
 	 * @param string $html add to cart flash HTML
 	 * @param \WP_Post $_ post object, unused
@@ -422,7 +422,7 @@ class WC_Customizer {
 	/**
 	 * Helper to get the percent discount for a product on sale.
 	 *
-	 * @since 2.5.0-dev
+	 * @since 2.5.0
 	 *
 	 * @param \WC_Product $product product instance
 	 * @return string percentage discount
@@ -468,7 +468,7 @@ class WC_Customizer {
 	/**
 	 * Calculates a sales percentage difference given regular and sale prices for a product.
 	 *
-	 * @since 2.5.0-dev
+	 * @since 2.5.0
 	 *
 	 * @param string $regular_price product regular price
 	 * @param string $sale_price product sale price
