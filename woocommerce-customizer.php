@@ -359,36 +359,26 @@ class WC_Customizer {
 	 */
 	public function customize_woocommerce_sale_flash( $html, $_, $product ) {
 
+		$text = '';
+
 		if ( is_product() && isset( $this->filters['single_sale_flash_text'] ) ) {
 
 			$text = $this->filters['single_sale_flash_text'];
 
-			// only get sales percentages when we should be replacing text
-			// check "false" specifically since the position could be 0
-			if ( false !== strpos( $text, '{percent}' ) ) {
-
-				$percent = $this->get_sale_percentage( $product );
-				$text    = str_replace( '{percent}', "{$percent}%", $text );
-			}
-
-			$html = "<span class='onsale'>{$text}</span>";
-
 		} elseif ( ! is_product() && isset( $this->filters['loop_sale_flash_text'] ) ) {
 
 			$text = $this->filters['loop_sale_flash_text'];
-
-			// only check for sales percentages when we should be replacing text
-			// check "false" specifically since the position could be 0
-			if ( false !== strpos( $text, '{percent}' ) ) {
-
-				$percent = $this->get_sale_percentage( $product );
-				$text    = str_replace( '{percent}', "{$percent}%", $text );
-			}
-
-			$html = "<span class='onsale'>{$text}</span>";
 		}
 
-		return $html;
+		// only get sales percentages when we should be replacing text
+		// check "false" specifically since the position could be 0
+		if ( false !== strpos( $text, '{percent}' ) ) {
+
+			$percent = $this->get_sale_percentage( $product );
+			$text    = str_replace( '{percent}', "{$percent}%", $text );
+		}
+
+		return ! empty( $text ) ? "<span class='onsale'>{$text}</span>" : $html;
 	}
 
 
