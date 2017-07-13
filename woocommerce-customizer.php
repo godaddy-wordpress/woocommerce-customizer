@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.0
+ * Version: 2.5.1-dev
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -111,7 +111,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.5.0';
+	const VERSION = '2.5.1-dev';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -208,18 +208,18 @@ class WC_Customizer {
 
 					if ( $filter_name == 'single_add_to_cart_text' ) {
 
-						add_filter( 'woocommerce_product_single_add_to_cart_text', array( $this, 'customize_single_add_to_cart_text' ) );
+						add_filter( 'woocommerce_product_single_add_to_cart_text', array( $this, 'customize_single_add_to_cart_text' ), 50 );
 
 					} else {
 
-						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 10, 2 );
+						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 50, 2 );
 					}
 
 				} elseif ( 'woocommerce_placeholder_img_src' === $filter_name ) {
 
 					// only filter placeholder images on the frontend
 					if ( ! is_admin() ) {
-						add_filter( $filter_name, array( $this, 'customize' ) );
+						add_filter( $filter_name, array( $this, 'customize' ), 50 );
 					}
 
 				} elseif ( 'loop_sale_flash_text' === $filter_name || 'single_sale_flash_text' === $filter_name ) {
@@ -228,7 +228,7 @@ class WC_Customizer {
 
 				} else {
 
-					add_filter( $filter_name, array( $this, 'customize' ) );
+					add_filter( $filter_name, array( $this, 'customize' ), 50 );
 				}
 			}
 		}
