@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Customizer 2.5.0\n"
+"Project-Id-Version: WooCommerce Customizer 2.5.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/skyverge/woocommerce-customizer/issues\n"
 "POT-Creation-Date: 2014-09-05 23:18:53+00:00\n"
@@ -272,44 +272,45 @@ msgstr ""
 msgid "Change the default placeholder image by setting this to a valid image URL"
 msgstr ""
 
-#: woocommerce-customizer.php:48
-#. translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
-msgid ""
-"%1$sWooCommerce Customizer is inactive.%2$s This version requires "
-"WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce to version 2.5.5 "
-"or newer%4$s"
+#: woocommerce-customizer.php:121
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot clone instances of %s."
 msgstr ""
 
-#: woocommerce-customizer.php:68
+#: woocommerce-customizer.php:133
+#. translators: Placeholders: %s - plugin name
+msgid "You cannot unserialize instances of %s."
+msgstr ""
+
+#: woocommerce-customizer.php:237
 #. translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
 msgid ""
 "%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. "
 "Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s"
 msgstr ""
 
-#: woocommerce-customizer.php:161
-#. translators: Placeholders: %s - plugin name
-msgid "You cannot clone instances of %s."
+#: woocommerce-customizer.php:257
+#. translators: Placeholders: %1$s <strong>, %2$s - </strong>, %3$s and %5$s -
+#. <a> tags, %4$s - </a>
+msgid ""
+"%1$sWooCommerce Customizer is inactive.%2$s This plugin requires "
+"WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce%4$s or %5$srun "
+"the WooCommerce database upgrade%4$s."
 msgstr ""
 
-#: woocommerce-customizer.php:173
-#. translators: Placeholders: %s - plugin name
-msgid "You cannot unserialize instances of %s."
-msgstr ""
-
-#: woocommerce-customizer.php:409
+#: woocommerce-customizer.php:400
 msgid "Configure"
 msgstr ""
 
-#: woocommerce-customizer.php:410
+#: woocommerce-customizer.php:401
 msgid "FAQ"
 msgstr ""
 
-#: woocommerce-customizer.php:411
+#: woocommerce-customizer.php:402
 msgid "Support"
 msgstr ""
 
-#: woocommerce-customizer.php:456
+#: woocommerce-customizer.php:447
 #. translators: Placeholder: %s - sale percentage
 msgid "up to %s"
 msgstr ""
