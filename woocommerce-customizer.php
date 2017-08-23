@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.0
+ * Version: 2.5.1-dev
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -25,54 +25,14 @@ defined( 'ABSPATH' ) or exit;
 
 // Check if WooCommerce is active
 if ( ! WC_Customizer::is_woocommerce_active() ) {
-	add_action( 'admin_notices', 'wc_customizer_render_wc_inactive_notice' );
+	add_action( 'admin_notices', array( 'WC_Customizer', 'render_wc_inactive_notice' ) );
 	return;
 }
 
 // WC version check
 if ( version_compare( get_option( 'woocommerce_db_version' ), '2.5.5', '<' ) ) {
-	add_action( 'admin_notices', 'wc_customizer_render_outdated_wc_version_notice' );
+	add_action( 'admin_notices', array( 'WC_Customizer', 'render_outdated_wc_version_notice' ) );
 	return;
-}
-
-
-/**
- * Renders a notice when WooCommerce version is outdated
- *
- * @since 2.3.1
- */
-function wc_customizer_render_outdated_wc_version_notice() {
-
-	$message = sprintf(
-		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive.%2$s This version requires WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce to version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
-		'<strong>',
-		'</strong>',
-		'<a href="' . admin_url( 'plugins.php' ) . '">',
-		'&nbsp;&raquo;</a>'
-	);
-
-	printf( '<div class="error"><p>%s</p></div>', $message );
-}
-
-
-/**
- * Renders a notice when WooCommerce version is outdated
- *
- * @since 2.3.1
- */
-function wc_customizer_render_wc_inactive_notice() {
-
-	$message = sprintf(
-		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-		__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
-		'<strong>',
-		'</strong>',
-		'<a href="' . admin_url( 'plugins.php' ) . '">',
-		'&nbsp;&raquo;</a>'
-	);
-
-	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
 
@@ -111,7 +71,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.5.0';
+	const VERSION = '2.5.1-dev';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -208,18 +168,18 @@ class WC_Customizer {
 
 					if ( $filter_name == 'single_add_to_cart_text' ) {
 
-						add_filter( 'woocommerce_product_single_add_to_cart_text', array( $this, 'customize_single_add_to_cart_text' ) );
+						add_filter( 'woocommerce_product_single_add_to_cart_text', array( $this, 'customize_single_add_to_cart_text' ), 50 );
 
 					} else {
 
-						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 10, 2 );
+						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 50, 2 );
 					}
 
 				} elseif ( 'woocommerce_placeholder_img_src' === $filter_name ) {
 
 					// only filter placeholder images on the frontend
 					if ( ! is_admin() ) {
-						add_filter( $filter_name, array( $this, 'customize' ) );
+						add_filter( $filter_name, array( $this, 'customize' ), 50 );
 					}
 
 				} elseif ( 'loop_sale_flash_text' === $filter_name || 'single_sale_flash_text' === $filter_name ) {
@@ -228,7 +188,7 @@ class WC_Customizer {
 
 				} else {
 
-					add_filter( $filter_name, array( $this, 'customize' ) );
+					add_filter( $filter_name, array( $this, 'customize' ), 50 );
 				}
 			}
 		}
@@ -262,6 +222,47 @@ class WC_Customizer {
 		}
 
 		return in_array( 'woocommerce/woocommerce.php', $active_plugins ) || array_key_exists( 'woocommerce/woocommerce.php', $active_plugins );
+	}
+
+
+	/**
+	 * Renders a notice when WooCommerce version is outdated
+	 *
+	 * @since 2.3.1
+	 */
+	public static function render_wc_inactive_notice() {
+
+		$message = sprintf(
+		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
+			__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
+			'<strong>',
+			'</strong>',
+			'<a href="' . admin_url( 'plugins.php' ) . '">',
+			'&nbsp;&raquo;</a>'
+		);
+
+		printf( '<div class="error"><p>%s</p></div>', $message );
+	}
+
+
+	/**
+	 * Renders a notice when WooCommerce version is outdated
+	 *
+	 * @since 2.3.1
+	 */
+	public static function render_outdated_wc_version_notice() {
+
+		$message = sprintf(
+		/* translators: Placeholders: %1$s <strong>, %2$s - </strong>, %3$s and %5$s - <a> tags, %4$s - </a> */
+			__( '%1$sWooCommerce Customizer is inactive.%2$s This plugin requires WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce%4$s or %5$srun the WooCommerce database upgrade%4$s.', 'woocommerce-customizer' ),
+			'<strong>',
+			'</strong>',
+			'<a href="' . admin_url( 'plugins.php' ) . '">',
+			'</a>',
+			'<a href="' . admin_url( 'plugins.php?do_update_woocommerce=true' ) . '">'
+		);
+
+		printf( '<div class="error"><p>%s</p></div>', $message );
 	}
 
 
@@ -359,36 +360,26 @@ class WC_Customizer {
 	 */
 	public function customize_woocommerce_sale_flash( $html, $_, $product ) {
 
+		$text = '';
+
 		if ( is_product() && isset( $this->filters['single_sale_flash_text'] ) ) {
 
 			$text = $this->filters['single_sale_flash_text'];
 
-			// only get sales percentages when we should be replacing text
-			// check "false" specifically since the position could be 0
-			if ( false !== strpos( $text, '{percent}' ) ) {
-
-				$percent = $this->get_sale_percentage( $product );
-				$text    = str_replace( '{percent}', "{$percent}%", $text );
-			}
-
-			$html = "<span class='onsale'>{$text}</span>";
-
 		} elseif ( ! is_product() && isset( $this->filters['loop_sale_flash_text'] ) ) {
 
 			$text = $this->filters['loop_sale_flash_text'];
-
-			// only check for sales percentages when we should be replacing text
-			// check "false" specifically since the position could be 0
-			if ( false !== strpos( $text, '{percent}' ) ) {
-
-				$percent = $this->get_sale_percentage( $product );
-				$text    = str_replace( '{percent}', "{$percent}%", $text );
-			}
-
-			$html = "<span class='onsale'>{$text}</span>";
 		}
 
-		return $html;
+		// only get sales percentages when we should be replacing text
+		// check "false" specifically since the position could be 0
+		if ( false !== strpos( $text, '{percent}' ) ) {
+
+			$percent = $this->get_sale_percentage( $product );
+			$text    = str_replace( '{percent}', "{$percent}%", $text );
+		}
+
+		return ! empty( $text ) ? "<span class='onsale'>{$text}</span>" : $html;
 	}
 
 

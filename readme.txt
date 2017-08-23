@@ -3,10 +3,10 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.1
-Tested up to: 4.7.4
+Tested up to: 4.8
 WC requires at least: 2.5.5
-WC tested up to: 3.0.7
-Stable tag: 2.5.0
+WC tested up to: 3.1.1
+Stable tag: 2.5.1-dev
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,9 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2.5.1-dev =
+* Tweak - Hook customizations later to be more aggressive about using WC Customizer values rather than filters from other plugins or themes
 
 = 2.5.0 =
 * Feature - Added sales badge text customization
