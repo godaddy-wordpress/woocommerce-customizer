@@ -6,7 +6,7 @@ Requires at least: 4.1
 Tested up to: 4.8.1
 WC requires at least: 2.5.5
 WC tested up to: 3.1.1
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,9 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2.5.2 =
+* Feature - Added out of stock text customization
 
 = 2.5.1 =
 * Tweak - Hook customizations later to be more aggressive about using WC Customizer values rather than filters from other plugins or themes
