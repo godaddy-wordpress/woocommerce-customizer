@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.1
+ * Version: 2.5.2
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -186,6 +186,10 @@ class WC_Customizer {
 
 					add_filter( 'woocommerce_sale_flash', array( $this, 'customize_woocommerce_sale_flash' ), 50, 3 );
 
+				} elseif ( 'single_out_of_stock_text' === $filter_name ) {
+
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_out_of_stock_text' ), 10, 2 );
+
 				} else {
 
 					add_filter( $filter_name, array( $this, 'customize' ), 50 );
@@ -342,6 +346,25 @@ class WC_Customizer {
 
 			// external add to cart text
 			return $this->filters['external_add_to_cart_text'];
+		}
+
+		return $text;
+	}
+
+
+	/**
+	 * Apply the product page out of stock text customization
+	 *
+	 * @since 2.5.2
+	 * @param string $text out of stock text
+	 * @param WC_Product $product product object
+	 * @return string modified out of stock text
+	 */
+	public function customize_single_out_of_stock_text( $text, $product ) {
+
+		// out of stock text
+		if ( isset( $this->filters['single_out_of_stock_text'] ) && ! $product->is_in_stock() ) {
+			return $this->filters['single_out_of_stock_text'];
 		}
 
 		return $text;

@@ -300,6 +300,20 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array( 'type' => 'sectionend' ),
+
+					array(
+						'title' => __( 'Out of Stock Text', 'woocommerce-customizer' ),
+						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'single_out_of_stock_text',
+						'title'    => __( 'Out of Stock text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes text for the out of stock on product pages. Default: "Out of stock"', 'woocommerce-customizer' ),
+						'type'     => 'text',
+					),
+	
+					array( 'type' => 'sectionend' ),
 				),
 
 			'checkout' =>
