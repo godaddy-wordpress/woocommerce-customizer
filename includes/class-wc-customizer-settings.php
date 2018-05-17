@@ -314,6 +314,20 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 	
 					array( 'type' => 'sectionend' ),
+
+					array(
+						'title' => __( 'Backorder Text', 'woocommerce-customizer' ),
+						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'single_backorder_text',
+						'title'    => __( 'Backorder text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes text for the backorder on product pages. Default: "Available on backorder"', 'woocommerce-customizer' ),
+						'type'     => 'text',
+					),
+
+					array( 'type' => 'sectionend' ),
 				),
 
 			'checkout' =>

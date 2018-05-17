@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.2
+ * Version: 2.5.3
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -190,6 +190,10 @@ class WC_Customizer {
 
 					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_out_of_stock_text' ), 10, 2 );
 
+				} elseif ( 'single_backorder_text' === $filter_name ) {
+
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_backorder_text' ), 10, 2 );
+
 				} else {
 
 					add_filter( $filter_name, array( $this, 'customize' ), 50 );
@@ -365,6 +369,25 @@ class WC_Customizer {
 		// out of stock text
 		if ( isset( $this->filters['single_out_of_stock_text'] ) && ! $product->is_in_stock() ) {
 			return $this->filters['single_out_of_stock_text'];
+		}
+
+		return $text;
+	}
+
+
+	/**
+	 * Apply the product page backorder text customization
+	 *
+	 * @since 2.5.3
+	 * @param string $text backorder text
+	 * @param WC_Product $product product object
+	 * @return string modified backorder text
+	 */
+	public function customize_single_backorder_text( $text, $product ) {
+
+		// Backorder text
+		if ( isset( $this->filters['single_backorder_text'] ) && $product->managing_stock() && $product->is_on_backorder( 1 ) ) {
+			return $this->filters['single_backorder_text'];
 		}
 
 		return $text;
