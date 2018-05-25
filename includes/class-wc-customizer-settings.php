@@ -171,6 +171,13 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array(
+						'id'       => 'bundle_add_to_cart_text',
+						'title'    => __( 'Bundle Product', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes the add to cart button text for bundle products on all loop pages', 'woocommerce-customizer' ),
+						'type'     => 'text'
+					),
+
+					array(
 						'id'       => 'out_of_stock_add_to_cart_text',
 						'title'    => __( 'Out of Stock Product', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes the add to cart button text for out of stock products on all loop pages', 'woocommerce-customizer' ),
@@ -312,7 +319,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 						'desc_tip' => __( 'Changes text for the out of stock on product pages. Default: "Out of stock"', 'woocommerce-customizer' ),
 						'type'     => 'text',
 					),
-	
+
 					array( 'type' => 'sectionend' ),
 
 					array(

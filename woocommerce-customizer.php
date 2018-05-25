@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.3
+ * Version: 2.5.4
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -346,10 +346,15 @@ class WC_Customizer {
 			// grouped add to cart text
 			return $this->filters['grouped_add_to_cart_text'];
 
-		} elseif( isset( $this->filters['external_add_to_cart_text'] ) && $product->is_type( 'external' ) ) {
+		} elseif ( isset( $this->filters['external_add_to_cart_text'] ) && $product->is_type( 'external' ) ) {
 
 			// external add to cart text
 			return $this->filters['external_add_to_cart_text'];
+
+		} elseif ( isset( $this->filters['bundle_add_to_cart_text'] ) && $product->is_type( 'bundle' ) ) {
+
+			// bundle add to cart text
+			return $this->filters['bundle_add_to_cart_text'];
 		}
 
 		return $text;
