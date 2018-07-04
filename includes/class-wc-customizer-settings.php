@@ -287,22 +287,6 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					array( 'type' => 'sectionend' ),
 
 					array(
-						'title' => __( 'Sale Flash', 'woocommerce-customizer' ),
-						'type'  => 'title'
-					),
-
-					array(
-						'id'       => 'single_sale_flash_text',
-						'title'    => __( 'Sale badge text', 'woocommerce-customizer' ),
-						'desc_tip' => __( 'Changes text for the sale flash on product pages. Default: "Sale!"', 'woocommerce-customizer' ),
-						'type'     => 'text',
-						/* translators: Placeholders: %1$s - <code>, %2$s - </code> */
-						'desc'     => sprintf( __( 'Use %1$s{percent}%2$s to insert percent off, e.g., "{percent} off!"', 'woocommerce-customizer' ), '<code>', '</code>' ) . '<br />' . __( 'Shows "up to n%" for grouped or variable products if multiple percentages are possible.', 'woocommerce-customizer' ),
-					),
-
-					array( 'type' => 'sectionend' ),
-
-					array(
 						'title' => __( 'Out of Stock Text', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
@@ -314,18 +298,27 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 						'type'     => 'text',
 					),
 
-					array( 'type' => 'sectionend' ),
-
-					array(
-						'title' => __( 'Backorder Text', 'woocommerce-customizer' ),
-						'type'  => 'title'
-					),
-
 					array(
 						'id'       => 'single_backorder_text',
 						'title'    => __( 'Backorder text', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes text for the backorder on product pages. Default: "Available on backorder"', 'woocommerce-customizer' ),
 						'type'     => 'text',
+					),
+
+					array( 'type' => 'sectionend' ),
+
+					array(
+						'title' => __( 'Sale Flash', 'woocommerce-customizer' ),
+						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'single_sale_flash_text',
+						'title'    => __( 'Sale badge text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes text for the sale flash on product pages. Default: "Sale!"', 'woocommerce-customizer' ),
+						'type'     => 'text',
+						/* translators: Placeholders: %1$s - <code>, %2$s - </code> */
+						'desc'     => sprintf( __( 'Use %1$s{percent}%2$s to insert percent off, e.g., "{percent} off!"', 'woocommerce-customizer' ), '<code>', '</code>' ) . '<br />' . __( 'Shows "up to n%" for grouped or variable products if multiple percentages are possible.', 'woocommerce-customizer' ),
 					),
 
 					array( 'type' => 'sectionend' ),

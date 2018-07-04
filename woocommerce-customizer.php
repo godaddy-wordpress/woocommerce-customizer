@@ -210,11 +210,11 @@ class WC_Customizer {
 
 				} elseif ( 'single_out_of_stock_text' === $filter_name ) {
 
-					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_out_of_stock_text' ), 10, 2 );
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_out_of_stock_text' ), 50, 2 );
 
 				} elseif ( 'single_backorder_text' === $filter_name ) {
 
-					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_backorder_text' ), 10, 2 );
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_backorder_text' ), 50, 2 );
 
 				} else {
 
