@@ -18,7 +18,7 @@
  *
  * @package     WC-Customizer/Classes
  * @author      SkyVerge
- * @copyright   Copyright (c) 2013-2017, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2013-2018, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -133,7 +133,8 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Return admin fields in proper format for outputting / saving
 	 *
-	 * @since 1.1
+	 * @since 1.1.0
+	 *
 	 * @return array
 	 */
 	public function get_settings() {

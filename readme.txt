@@ -3,10 +3,10 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.1
-Tested up to: 4.9.5
-WC requires at least: 2.5.5
-WC tested up to: 3.3.3
-Stable tag: 2.5.4
+Tested up to: 4.9.6
+WC requires at least: 2.6.14
+WC tested up to: 3.4.3
+Stable tag: 2.6.0-dev.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ Helps you customize WooCommerce without writing any code!
 
 WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP code to use them. This plugin provides a settings page where you can add your customizations and save them without needing to write any code or modify any templates, which is helpful for quick change testing.
 
-> **Requires** WooCommerce 2.5.5+
+> **Requires** WooCommerce 2.6.14+
 
 Here are some customizations you can make:
 
@@ -73,14 +73,11 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2.5.4 =
-* Feature - Added bundle product text customization
-
-= 2.5.3 =
-* Feature - Added backorder text customization
-
-= 2.5.2 =
-* Feature - Added out of stock text customization
+= 2.6.0-dev.1 =
+* Feature - Added backorder text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
+* Feature - Added out of stock text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
+* Feature - Change bundle product add to cart text with WooCommerce Product Bundles (props [@sandysaille](https://github.com/sandysaille)!)
+* Misc - Requires WooCommerce 2.6.14
 
 = 2.5.1 =
 * Tweak - Hook customizations later to be more aggressive about using WC Customizer values rather than filters from other plugins or themes

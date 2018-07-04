@@ -5,11 +5,11 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.4
+ * Version: 2.6.0-dev.1
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
- * Copyright: (c) 2013-2017, SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2013-2018, SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,8 +17,11 @@
  * @package   WC-Customizer
  * @author    SkyVerge
  * @category  Utility
- * @copyright Copyright (c) 2013-2017, SkyVerge, Inc.
+ * @copyright Copyright (c) 2013-2018, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ *
+ * WC requires at least: 2.5.5
+ * WC tested up to: 3.4.3
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -71,7 +74,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.5.1';
+	const VERSION = '2.6.0-dev.1';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -364,9 +367,10 @@ class WC_Customizer {
 	/**
 	 * Apply the product page out of stock text customization
 	 *
-	 * @since 2.5.2
+	 * @since 2.6.0-dev.1
+	 *
 	 * @param string $text out of stock text
-	 * @param WC_Product $product product object
+	 * @param \WC_Product $product product object
 	 * @return string modified out of stock text
 	 */
 	public function customize_single_out_of_stock_text( $text, $product ) {
@@ -383,14 +387,15 @@ class WC_Customizer {
 	/**
 	 * Apply the product page backorder text customization
 	 *
-	 * @since 2.5.3
+	 * @since 2.6.0-dev.1
+	 *
 	 * @param string $text backorder text
-	 * @param WC_Product $product product object
+	 * @param \WC_Product $product product object
 	 * @return string modified backorder text
 	 */
 	public function customize_single_backorder_text( $text, $product ) {
 
-		// Backorder text
+		// backorder text
 		if ( isset( $this->filters['single_backorder_text'] ) && $product->managing_stock() && $product->is_on_backorder( 1 ) ) {
 			return $this->filters['single_backorder_text'];
 		}
