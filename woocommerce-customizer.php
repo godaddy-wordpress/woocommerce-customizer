@@ -20,7 +20,7 @@
  * @copyright Copyright (c) 2013-2018, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  *
- * WC requires at least: 2.5.5
+ * WC requires at least: 2.6.14
  * WC tested up to: 3.4.3
  */
 
@@ -77,7 +77,7 @@ class WC_Customizer {
 	const VERSION = '2.6.0-dev.1';
 
 	/** required WooCommerce version number */
-	const MIN_WOOCOMMERCE_VERSION = '2.5.5';
+	const MIN_WOOCOMMERCE_VERSION = '2.6.14';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
