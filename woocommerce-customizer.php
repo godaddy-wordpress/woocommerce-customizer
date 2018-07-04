@@ -82,6 +82,9 @@ class WC_Customizer {
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
 
+	/** @var \WC_Customizer_Integrations integrations class instance */
+	protected $integrations;
+
 	/** @var \WC_Customizer_Settings instance */
 	public $settings;
 
@@ -112,6 +115,8 @@ class WC_Customizer {
 			$this->install();
 		}
 
+		$this->includes();
+
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
 	}
 
@@ -137,6 +142,17 @@ class WC_Customizer {
 
 		/* translators: Placeholders: %s - plugin name */
 		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
+	}
+
+
+	/**
+	 * Loads required filed.
+	 *
+	 * @since 2.6.0-dev.1
+	 */
+	protected function includes() {
+		require_once( 'includes/class-wc-customizer-integrations.php' );
+		$this->integrations = new WC_Customizer_Integrations();
 	}
 
 
@@ -395,10 +411,6 @@ class WC_Customizer {
 			// external add to cart text
 			return $this->filters['external_add_to_cart_text'];
 
-		} elseif ( isset( $this->filters['bundle_add_to_cart_text'] ) && $product->is_type( 'bundle' ) ) {
-
-			// bundle add to cart text
-			return $this->filters['bundle_add_to_cart_text'];
 		}
 
 		return $text;
@@ -589,6 +601,18 @@ class WC_Customizer {
 			self::$instance = new self();
 		}
 		return self::$instance;
+	}
+
+
+	/**
+	 * Gets the integrations class instance.
+	 *
+	 * @since 2.6.0-dev.1
+	 *
+	 * @return \WC_Customizer_Integrations
+	 */
+	public function get_integrations_instance() {
+		return $this->integrations;
 	}
 
 
