@@ -76,7 +76,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 = 2.6.0-dev.1 =
 * Feature - Added backorder text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
 * Feature - Added out of stock text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
-* Feature - Change bundle product add to cart text with WooCommerce Product Bundles (props [@sandysaille](https://github.com/sandysaille)!)
+* Feature - Change bundle product add to cart text with WooCommerce Product Bundles (props [@DaisukiDaYo](https://github.com/DaisukiDaYo)!)
 * Misc - Requires WooCommerce 2.6.14
 
 = 2.5.1 =
