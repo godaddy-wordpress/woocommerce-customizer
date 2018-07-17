@@ -18,7 +18,7 @@
  *
  * @package     WC-Customizer/Classes
  * @author      SkyVerge
- * @copyright   Copyright (c) 2013-2017, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2013-2018, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -133,7 +133,8 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	/**
 	 * Return admin fields in proper format for outputting / saving
 	 *
-	 * @since 1.1
+	 * @since 1.1.0
+	 *
 	 * @return array
 	 */
 	public function get_settings() {
@@ -286,6 +287,27 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					array( 'type' => 'sectionend' ),
 
 					array(
+						'title' => __( 'Out of Stock Text', 'woocommerce-customizer' ),
+						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'single_out_of_stock_text',
+						'title'    => __( 'Out of Stock text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes text for the out of stock on product pages. Default: "Out of stock"', 'woocommerce-customizer' ),
+						'type'     => 'text',
+					),
+
+					array(
+						'id'       => 'single_backorder_text',
+						'title'    => __( 'Backorder text', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Changes text for the backorder on product pages. Default: "Available on backorder"', 'woocommerce-customizer' ),
+						'type'     => 'text',
+					),
+
+					array( 'type' => 'sectionend' ),
+
+					array(
 						'title' => __( 'Sale Flash', 'woocommerce-customizer' ),
 						'type'  => 'title'
 					),
@@ -411,6 +433,15 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 				),
 		);
+
+		/**
+		 * Filters the available customizer settings.
+		 *
+		 * @since 2.6.0-dev.1
+		 *
+		 * @param array $settings the plugin settings
+		 */
+		$settings = apply_filters( 'wc_customizer_settings', $settings );
 
 		$current_section = isset( $GLOBALS['current_section'] ) ? $GLOBALS['current_section'] : 'shop_loop';
 

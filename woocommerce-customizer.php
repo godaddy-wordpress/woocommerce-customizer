@@ -5,11 +5,11 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.5.1
+ * Version: 2.6.0-dev.1
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
- * Copyright: (c) 2013-2017, SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2013-2018, SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,20 +17,23 @@
  * @package   WC-Customizer
  * @author    SkyVerge
  * @category  Utility
- * @copyright Copyright (c) 2013-2017, SkyVerge, Inc.
+ * @copyright Copyright (c) 2013-2018, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ *
+ * WC requires at least: 2.6.14
+ * WC tested up to: 3.4.3
  */
 
 defined( 'ABSPATH' ) or exit;
 
 // Check if WooCommerce is active
-if ( ! WC_Customizer::is_woocommerce_active() ) {
+if ( ! WC_Customizer::is_plugin_active( 'woocommerce.php' ) ) {
 	add_action( 'admin_notices', array( 'WC_Customizer', 'render_wc_inactive_notice' ) );
 	return;
 }
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), '2.5.5', '<' ) ) {
+if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN_WOOCOMMERCE_VERSION, '<' ) ) {
 	add_action( 'admin_notices', array( 'WC_Customizer', 'render_outdated_wc_version_notice' ) );
 	return;
 }
@@ -71,10 +74,16 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.5.1';
+	const VERSION = '2.6.0-dev.1';
+
+	/** required WooCommerce version number */
+	const MIN_WOOCOMMERCE_VERSION = '2.6.14';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
+
+	/** @var \WC_Customizer_Integrations integrations class instance */
+	protected $integrations;
 
 	/** @var \WC_Customizer_Settings instance */
 	public $settings;
@@ -106,6 +115,8 @@ class WC_Customizer {
 			$this->install();
 		}
 
+		$this->includes();
+
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
 	}
 
@@ -131,6 +142,17 @@ class WC_Customizer {
 
 		/* translators: Placeholders: %s - plugin name */
 		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
+	}
+
+
+	/**
+	 * Loads required filed.
+	 *
+	 * @since 2.6.0-dev.1
+	 */
+	protected function includes() {
+		require_once( 'includes/class-wc-customizer-integrations.php' );
+		$this->integrations = new WC_Customizer_Integrations();
 	}
 
 
@@ -186,6 +208,14 @@ class WC_Customizer {
 
 					add_filter( 'woocommerce_sale_flash', array( $this, 'customize_woocommerce_sale_flash' ), 50, 3 );
 
+				} elseif ( 'single_out_of_stock_text' === $filter_name ) {
+
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_out_of_stock_text' ), 50, 2 );
+
+				} elseif ( 'single_backorder_text' === $filter_name ) {
+
+					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_backorder_text' ), 50, 2 );
+
 				} else {
 
 					add_filter( $filter_name, array( $this, 'customize' ), 50 );
@@ -211,17 +241,53 @@ class WC_Customizer {
 	 * Checks if WooCommerce is active
 	 *
 	 * @since 2.3.0
+	 * @deprecated 2.6.0-dev.1
+	 *
 	 * @return bool true if WooCommerce is active, false otherwise
 	 */
 	public static function is_woocommerce_active() {
 
+		_deprecated_function( 'WC_Customizer::is_woocommerce_active', '2.6.0-dev.1', 'WC_Customizer::is_plugin_active' );
+
+		return self::is_plugin_active( 'woocommerce.php' );
+	}
+
+
+	/**
+	 * Helper function to determine whether a plugin is active.
+	 *
+	 * @since 2.6.0-dev.1
+	 *
+	 * @param string $plugin_name plugin name, as the plugin-filename.php
+	 * @return boolean true if the named plugin is installed and active
+	 */
+	public static function is_plugin_active( $plugin_name ) {
+
 		$active_plugins = (array) get_option( 'active_plugins', array() );
 
 		if ( is_multisite() ) {
-			$active_plugins = array_merge( $active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
+			$active_plugins = array_merge( $active_plugins, array_keys( get_site_option( 'active_sitewide_plugins', array() ) ) );
 		}
 
-		return in_array( 'woocommerce/woocommerce.php', $active_plugins ) || array_key_exists( 'woocommerce/woocommerce.php', $active_plugins );
+		$plugin_filenames = array();
+
+		foreach ( $active_plugins as $plugin ) {
+
+			if ( false !== strpos( $plugin, '/' ) ) {
+
+				// normal plugin name (plugin-dir/plugin-filename.php)
+				list( , $filename ) = explode( '/', $plugin );
+
+			} else {
+
+				// no directory, just plugin file
+				$filename = $plugin;
+			}
+
+			$plugin_filenames[] = $filename;
+		}
+
+		return in_array( $plugin_name, $plugin_filenames );
 	}
 
 
@@ -233,11 +299,12 @@ class WC_Customizer {
 	public static function render_wc_inactive_notice() {
 
 		$message = sprintf(
-		/* translators: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-			__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version 2.5.5 or newer%4$s', 'woocommerce-customizer' ),
+			/* translators: %1$s - <strong>, %2$s - </strong>, %3$s - <a>, %4$s - version number, %5$s - </a> */
+			__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version %4$s or newer%5$s', 'woocommerce-customizer' ),
 			'<strong>',
 			'</strong>',
 			'<a href="' . admin_url( 'plugins.php' ) . '">',
+			self::MIN_WOOCOMMERCE_VERSION,
 			'&nbsp;&raquo;</a>'
 		);
 
@@ -253,10 +320,11 @@ class WC_Customizer {
 	public static function render_outdated_wc_version_notice() {
 
 		$message = sprintf(
-		/* translators: Placeholders: %1$s <strong>, %2$s - </strong>, %3$s and %5$s - <a> tags, %4$s - </a> */
-			__( '%1$sWooCommerce Customizer is inactive.%2$s This plugin requires WooCommerce 2.5.5 or newer. Please %3$supdate WooCommerce%4$s or %5$srun the WooCommerce database upgrade%4$s.', 'woocommerce-customizer' ),
+			/* translators: Placeholders: %1$s - <strong>, %2$s - </strong>, %3$s - version number, %4$s and %6$s - <a> tags, %5$s - </a> */
+			__( '%1$sWooCommerce Customizer is inactive.%2$s This plugin requires WooCommerce %3$s or newer. Please %4$supdate WooCommerce%5$s or %6$srun the WooCommerce database upgrade%5$s.', 'woocommerce-customizer' ),
 			'<strong>',
 			'</strong>',
+			self::MIN_WOOCOMMERCE_VERSION,
 			'<a href="' . admin_url( 'plugins.php' ) . '">',
 			'</a>',
 			'<a href="' . admin_url( 'plugins.php?do_update_woocommerce=true' ) . '">'
@@ -338,10 +406,51 @@ class WC_Customizer {
 			// grouped add to cart text
 			return $this->filters['grouped_add_to_cart_text'];
 
-		} elseif( isset( $this->filters['external_add_to_cart_text'] ) && $product->is_type( 'external' ) ) {
+		} elseif ( isset( $this->filters['external_add_to_cart_text'] ) && $product->is_type( 'external' ) ) {
 
 			// external add to cart text
 			return $this->filters['external_add_to_cart_text'];
+
+		}
+
+		return $text;
+	}
+
+
+	/**
+	 * Apply the product page out of stock text customization
+	 *
+	 * @since 2.6.0-dev.1
+	 *
+	 * @param string $text out of stock text
+	 * @param \WC_Product $product product object
+	 * @return string modified out of stock text
+	 */
+	public function customize_single_out_of_stock_text( $text, $product ) {
+
+		// out of stock text
+		if ( isset( $this->filters['single_out_of_stock_text'] ) && ! $product->is_in_stock() ) {
+			return $this->filters['single_out_of_stock_text'];
+		}
+
+		return $text;
+	}
+
+
+	/**
+	 * Apply the product page backorder text customization
+	 *
+	 * @since 2.6.0-dev.1
+	 *
+	 * @param string $text backorder text
+	 * @param \WC_Product $product product object
+	 * @return string modified backorder text
+	 */
+	public function customize_single_backorder_text( $text, $product ) {
+
+		// backorder text
+		if ( isset( $this->filters['single_backorder_text'] ) && $product->managing_stock() && $product->is_on_backorder( 1 ) ) {
+			return $this->filters['single_backorder_text'];
 		}
 
 		return $text;
@@ -492,6 +601,18 @@ class WC_Customizer {
 			self::$instance = new self();
 		}
 		return self::$instance;
+	}
+
+
+	/**
+	 * Gets the integrations class instance.
+	 *
+	 * @since 2.6.0-dev.1
+	 *
+	 * @return \WC_Customizer_Integrations
+	 */
+	public function get_integrations_instance() {
+		return $this->integrations;
 	}
 
 
