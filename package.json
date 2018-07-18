@@ -10,20 +10,7 @@
 	"bugs": {
 		"url": "https://github.com/skyverge/woocommerce-customizer/issues"
 	},
-	"engines": {
-		"node": ">= 0.10.0"
-	},
 	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-contrib-clean": "~0.5.0",
-		"grunt-contrib-copy": "~0.5.0",
-		"grunt-newer": "~0.7.0",
-		"grunt-notify": "~0.3.0",
-		"grunt-wp-deploy": "~1.2.1",
-		"grunt-wp-i18n": "~0.4.5",
-		"load-grunt-tasks": "~0.6.0",
-		"time-grunt": "~0.4.0",
-		"underscore": "~1.6.0",
-		"underscore.string": "~2.3.3"
+		"sake": "github:skyverge/sake"
 	}
 }
