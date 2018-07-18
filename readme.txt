@@ -3,10 +3,10 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.1
-Tested up to: 4.9.6
+Tested up to: 4.9.7
 WC requires at least: 2.6.14
 WC tested up to: 3.4.3
-Stable tag: 2.6.0-dev.1
+Stable tag: 2.6.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,7 +73,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2018.nn.nn - version 2.6.0-dev.1 =
+= 2018.07.17 - version 2.6.0 =
 * Feature - Added backorder text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
 * Feature - Added out of stock text customization on product pages (props [@sandysaille](https://github.com/sandysaille)!)
 * Feature - Change bundle product add to cart text with WooCommerce Product Bundles (props [@DaisukiDaYo](https://github.com/DaisukiDaYo)!)

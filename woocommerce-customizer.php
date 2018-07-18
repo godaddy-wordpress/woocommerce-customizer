@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.6.0-dev.1
+ * Version: 2.6.0
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -74,7 +74,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.6.0-dev.1';
+	const VERSION = '2.6.0';
 
 	/** required WooCommerce version number */
 	const MIN_WOOCOMMERCE_VERSION = '2.6.14';
@@ -148,7 +148,7 @@ class WC_Customizer {
 	/**
 	 * Loads required filed.
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 */
 	protected function includes() {
 		require_once( 'includes/class-wc-customizer-integrations.php' );
@@ -241,13 +241,13 @@ class WC_Customizer {
 	 * Checks if WooCommerce is active
 	 *
 	 * @since 2.3.0
-	 * @deprecated 2.6.0-dev.1
+	 * @deprecated 2.6.0
 	 *
 	 * @return bool true if WooCommerce is active, false otherwise
 	 */
 	public static function is_woocommerce_active() {
 
-		_deprecated_function( 'WC_Customizer::is_woocommerce_active', '2.6.0-dev.1', 'WC_Customizer::is_plugin_active' );
+		_deprecated_function( 'WC_Customizer::is_woocommerce_active', '2.6.0', 'WC_Customizer::is_plugin_active' );
 
 		return self::is_plugin_active( 'woocommerce.php' );
 	}
@@ -256,7 +256,7 @@ class WC_Customizer {
 	/**
 	 * Helper function to determine whether a plugin is active.
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 *
 	 * @param string $plugin_name plugin name, as the plugin-filename.php
 	 * @return boolean true if the named plugin is installed and active
@@ -420,7 +420,7 @@ class WC_Customizer {
 	/**
 	 * Apply the product page out of stock text customization
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 *
 	 * @param string $text out of stock text
 	 * @param \WC_Product $product product object
@@ -440,7 +440,7 @@ class WC_Customizer {
 	/**
 	 * Apply the product page backorder text customization
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 *
 	 * @param string $text backorder text
 	 * @param \WC_Product $product product object
@@ -607,7 +607,7 @@ class WC_Customizer {
 	/**
 	 * Gets the integrations class instance.
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 *
 	 * @return \WC_Customizer_Integrations
 	 */

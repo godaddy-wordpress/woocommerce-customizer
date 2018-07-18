@@ -437,7 +437,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		/**
 		 * Filters the available customizer settings.
 		 *
-		 * @since 2.6.0-dev.1
+		 * @since 2.6.0
 		 *
 		 * @param array $settings the plugin settings
 		 */

@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) or exit;
  *
  * Adds integration code for other WooCommerce extensions.
  *
- * @since 2.6.0-dev.1
+ * @since 2.6.0
  */
 class WC_Customizer_Integrations {
 
@@ -37,7 +37,7 @@ class WC_Customizer_Integrations {
 	/**
 	 * WC_Customizer_Integrations constructor.
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 */
 	public function __construct() {
 
@@ -52,7 +52,7 @@ class WC_Customizer_Integrations {
 	/**
 	 * Adds settings when Product Bundles is active.
 	 *
-	 * @since 2.6.0-dev.1
+	 * @since 2.6.0
 	 *
 	 * @param array $settings the settings array
 	 * @return array updated settings
@@ -89,7 +89,7 @@ class WC_Customizer_Integrations {
 	/**
 	 * Customizes the add to cart button for bundle products.
 	 *
-	 * @since  2.6.0-dev.1
+	 * @since  2.6.0
 	 *
 	 * @param string $text add to cart text
 	 * @param WC_Product $product product object
