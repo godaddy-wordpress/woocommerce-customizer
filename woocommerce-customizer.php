@@ -347,8 +347,10 @@ class WC_Customizer {
 	 */
 	public function render_media_library_field() {
 
-		// Get the placeholder image URL directly from settings so the admin form
-		// shows the correct image immediately after saving.
+		/*
+		 * Get the placeholder image URL directly from settings so the admin form
+		 * shows the correct image immediately after saving.
+		 */
 		$placeholder_url = $this->settings->customizations["woocommerce_placeholder_img_src"];
 
 		?>

@@ -48,7 +48,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 		wp_enqueue_media();
 
-		// load custom admin scripts
+		// Load custom admin scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ), 11 );
 
 		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
@@ -142,9 +142,11 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 			}
 		}
 
-		// The placeholder image URL is set via the media library, so isn't
-		// included in the standard settings fields.
-		// Retrieve it from the POST here.
+		/*
+		 * The placeholder image URL is set via the media library, so isn't
+		 * included in the standard settings fields.
+		 * Retrieve it from the POST here.
+		 */
 		$woocommerce_placeholder_img_src = filter_input( INPUT_POST, 'woocommerce_placeholder_img_src', FILTER_SANITIZE_STRING );
 
 		$this->customizations[ 'woocommerce_placeholder_img_src' ] = $woocommerce_placeholder_img_src;
