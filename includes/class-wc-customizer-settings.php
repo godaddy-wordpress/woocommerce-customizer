@@ -438,8 +438,6 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 					array(
 						'id'       => 'woocommerce_media_library',
-						'title'    => __( 'Placeholder Image source', 'woocommerce-customizer' ),
-						'desc_tip' => __( 'Change the default placeholder image by setting this to a valid image URL', 'woocommerce-customizer' ),
 						'type'     => 'woocommerce_customizer_media_library'
 					),
 

@@ -174,17 +174,26 @@ class WC_Customizer {
 
 	/**
 	 * TODO: Render media library field here.
+	 * TODO: Get previously selected image URL.
 	 */
 	public function render_media_library_field() {
 
-		?><div class="media-library-wrapper">
-			<img id="media_preview" src="" style="max-height: 100px;">
-		</div>
-		<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
-		<input type="hidden" id="woocommerce_placeholder_img_src" value="">
-
+		?>
+		<table class="form-table">
+			<tbody><tr valign="top">
+				<th scope="row" class="titledesc">
+					<label for="woocommerce_placeholder_img_src"><?php _e( 'Placeholder Image' ); ?></label>
+				</th>
+				<td class="forminp forminp-text">
+					<div class="media-library-wrapper">
+						<img id="media_preview" src="" style="max-height: 100px;">
+					</div>
+					<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
+					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="">
+				</td>
+			</tr>
+			</tbody></table>
 		<?php
-
 	}
 
 
