@@ -140,6 +140,13 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 			}
 		}
 
+		// The placeholder image URL is set via the media library, so isn't
+		// included in the standard settings fields.
+		// Retrieve it from the POST here.
+		$woocommerce_placeholder_img_src = filter_input( INPUT_POST, 'woocommerce_placeholder_img_src', FILTER_SANITIZE_STRING );
+
+		$this->customizations[ 'woocommerce_placeholder_img_src' ] = $woocommerce_placeholder_img_src;
+
 		update_option( 'wc_customizer_active_customizations', $this->customizations );
 	}
 
