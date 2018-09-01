@@ -38,7 +38,6 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN
 	return;
 }
 
-
 /**
  * # WooCommerce Customizer Main Plugin Class
  *
@@ -118,6 +117,9 @@ class WC_Customizer {
 		$this->includes();
 
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
+
+		add_action( 'woocommerce_admin_field_woocommerce_customizer_media_library', array( $this, 'render_media_library_field' ) );
+
 	}
 
 
@@ -167,6 +169,14 @@ class WC_Customizer {
 
 		$settings[] = require_once( 'includes/class-wc-customizer-settings.php' );
 		return $settings;
+	}
+
+
+	/**
+	 * TODO: Render media library field here.
+	 */
+	public function render_media_library_field() {
+
 	}
 
 
