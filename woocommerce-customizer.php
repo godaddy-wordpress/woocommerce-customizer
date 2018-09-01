@@ -38,6 +38,7 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN
 	return;
 }
 
+
 /**
  * # WooCommerce Customizer Main Plugin Class
  *
