@@ -119,8 +119,8 @@ class WC_Customizer {
 
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
 
+		// Add action to render custom media library button field.
 		add_action( 'woocommerce_admin_field_woocommerce_customizer_media_library', array( $this, 'render_media_library_field' ) );
-
 	}
 
 
@@ -348,7 +348,7 @@ class WC_Customizer {
 	public function render_media_library_field() {
 
 		// Get the placeholder image URL directly from settings so the admin form
-		// shows the correct immediately after saving.
+		// shows the correct image immediately after saving.
 		$placeholder_url = $this->settings->customizations["woocommerce_placeholder_img_src"];
 
 		?>
