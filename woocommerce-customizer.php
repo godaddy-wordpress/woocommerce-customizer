@@ -177,6 +177,14 @@ class WC_Customizer {
 	 */
 	public function render_media_library_field() {
 
+		?><div class="media-library-wrapper">
+			<img id="media_preview" src="" style="max-height: 100px;">
+		</div>
+		<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
+		<input type="hidden" id="woocommerce_placeholder_img_src" value="">
+
+		<?php
+
 	}
 
 

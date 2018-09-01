@@ -46,7 +46,21 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 		parent::__construct();
 
+		wp_enqueue_media();
+
+		// load custom admin scripts
+		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ), 11 );
+
 		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
+	}
+
+
+	/**
+	 *
+	 */
+	public function load_scripts() {
+
+		wp_enqueue_script( 'woocommerce-customizer', plugins_url('../assets/js/admin/wc-customizer-admin.js', __FILE__) );
 	}
 
 
@@ -423,7 +437,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array(
-						'id'       => 'woocommerce_placeholder_img_src',
+						'id'       => 'woocommerce_media_library',
 						'title'    => __( 'Placeholder Image source', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Change the default placeholder image by setting this to a valid image URL', 'woocommerce-customizer' ),
 						'type'     => 'woocommerce_customizer_media_library'
