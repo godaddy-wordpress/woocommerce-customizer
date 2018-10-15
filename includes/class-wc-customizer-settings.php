@@ -51,6 +51,9 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		// load custom admin scripts
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ), 11 );
 
+		// add action to render custom media library button field
+		add_action( 'woocommerce_admin_field_woocommerce_customizer_media_library', array( $this, 'render_media_library_field' ) );
+
 		$this->customizations = get_option( 'wc_customizer_active_customizations', array() );
 	}
 
@@ -469,6 +472,41 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		$current_section = isset( $GLOBALS['current_section'] ) ? $GLOBALS['current_section'] : 'shop_loop';
 
 		return isset( $settings[ $current_section ] ) ?  $settings[ $current_section ] : $settings['shop_loop'];
+	}
+
+
+	/**
+	 * Renders a button which opens the media library model
+	 *
+	 * Also renders an image field to display the currently selected image
+	 * and a hidden field used to store the selected image URL
+	 *
+	 * @since 2.6.1
+	 */
+	public function render_media_library_field() {
+
+		/*
+		 * Get the placeholder image URL directly from settings so the admin form
+		 * shows the correct image immediately after saving.
+		 */
+		$placeholder_url = $this->customizations['woocommerce_placeholder_img_src'];
+
+		?>
+		<table class="form-table">
+			<tbody><tr valign="top">
+				<th scope="row" class="titledesc">
+					<label for="woocommerce_placeholder_img_src"><?php _e( 'Placeholder Image' ); ?></label>
+				</th>
+				<td class="forminp forminp-text">
+					<div class="media-library-wrapper">
+						<img id="media_preview" src="<?php echo $placeholder_url; ?>" style="max-height: 200px;">
+					</div>
+					<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
+					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="<?php echo $placeholder_url; ?>">
+				</td>
+			</tr>
+			</tbody></table>
+		<?php
 	}
 
 

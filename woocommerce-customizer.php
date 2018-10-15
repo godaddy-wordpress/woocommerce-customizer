@@ -118,9 +118,6 @@ class WC_Customizer {
 		$this->includes();
 
 		add_action( 'woocommerce_init', array( $this, 'load_customizations' ) );
-
-		// add action to render custom media library button field
-		add_action( 'woocommerce_admin_field_woocommerce_customizer_media_library', array( $this, 'render_media_library_field' ) );
 	}
 
 
@@ -334,41 +331,6 @@ class WC_Customizer {
 		);
 
 		printf( '<div class="error"><p>%s</p></div>', $message );
-	}
-
-
-	/**
-	 * Renders a button which opens the media library model
-	 *
-	 * Also renders an image field to display the currently selected image
-	 * and a hidden field used to store the selected image URL
-	 *
-	 * @since 2.6.1
-	 */
-	public function render_media_library_field() {
-
-		/*
-		 * Get the placeholder image URL directly from settings so the admin form
-		 * shows the correct image immediately after saving.
-		 */
-		$placeholder_url = $this->settings->customizations['woocommerce_placeholder_img_src'];
-
-		?>
-		<table class="form-table">
-			<tbody><tr valign="top">
-				<th scope="row" class="titledesc">
-					<label for="woocommerce_placeholder_img_src"><?php _e( 'Placeholder Image' ); ?></label>
-				</th>
-				<td class="forminp forminp-text">
-					<div class="media-library-wrapper">
-						<img id="media_preview" src="<?php echo $placeholder_url; ?>" style="max-height: 200px;">
-					</div>
-					<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
-					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="<?php echo $placeholder_url; ?>">
-				</td>
-			</tr>
-			</tbody></table>
-		<?php
 	}
 
 
