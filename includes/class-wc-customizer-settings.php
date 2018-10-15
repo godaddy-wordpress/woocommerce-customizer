@@ -499,10 +499,10 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 				</th>
 				<td class="forminp forminp-text">
 					<div class="media-library-wrapper">
-						<img id="media_preview" src="<?php echo $placeholder_url; ?>" style="max-height: 200px;">
+						<img id="media_preview" src="<?php echo esc_url( $placeholder_url ); ?>" style="max-height: 200px;">
 					</div>
 					<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
-					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="<?php echo $placeholder_url; ?>">
+					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="<?php echo esc_url( $placeholder_url ); ?>">
 				</td>
 			</tr>
 			</tbody></table>
