@@ -495,7 +495,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		<table class="form-table">
 			<tbody><tr valign="top">
 				<th scope="row" class="titledesc">
-					<label for="woocommerce_placeholder_img_src"><?php _e( 'Placeholder Image' ); ?></label>
+					<label for="woocommerce_placeholder_img_src"><?php esc_html_e( 'Placeholder Image', 'woocommerce-customizer' ); ?></label>
 				</th>
 				<td class="forminp forminp-text">
 					<div class="media-library-wrapper">
