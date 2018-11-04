@@ -150,7 +150,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 		 * included in the standard settings fields.
 		 * Retrieve it from the POST here.
 		 */
-		$woocommerce_placeholder_img_src = filter_input( INPUT_POST, 'woocommerce_placeholder_img_src', FILTER_SANITIZE_STRING );
+		$woocommerce_placeholder_img_src = isset( $_POST['woocommerce_placeholder_img_src'] ) ? wc_clean( $_POST['woocommerce_placeholder_img_src'] ) : '';
 
 		$this->customizations['woocommerce_placeholder_img_src'] = $woocommerce_placeholder_img_src;
 
