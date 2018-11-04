@@ -46,7 +46,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 
 		parent::__construct();
 
-		wp_enqueue_media();
+		wp_enqueue_media( array( 'serializejson', 'media-models', 'wp-util' ) );
 
 		// load custom admin scripts
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ), 11 );
