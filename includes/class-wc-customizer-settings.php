@@ -501,7 +501,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					<div class="media-library-wrapper">
 						<img id="media_preview" src="<?php echo esc_url( $placeholder_url ); ?>" style="max-height: 200px;">
 					</div>
-					<input id="media_library_button" type="button" class="button" value="<?php _e( 'Choose image' ); ?>" />
+					<input id="media_library_button" type="button" class="button" value="<?php esc_attr_e( 'Choose image', 'woocommerce-customizer' ); ?>" />
 					<input type="hidden" name="woocommerce_placeholder_img_src" id="woocommerce_placeholder_img_src" value="<?php echo esc_url( $placeholder_url ); ?>">
 				</td>
 			</tr>
