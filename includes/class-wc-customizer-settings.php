@@ -65,7 +65,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 	 */
 	public function load_scripts() {
 
-		wp_enqueue_script( 'woocommerce-customizer', plugins_url( '../assets/js/admin/wc-customizer-admin.js', __FILE__) );
+		wp_enqueue_script( 'woocommerce-customizer', plugins_url( '../assets/js/admin/wc-customizer-admin.js', __FILE__), array(), WC_Customizer::VERSION );
 	}
 
 
