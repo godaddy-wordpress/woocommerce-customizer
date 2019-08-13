@@ -33,7 +33,7 @@ if ( ! WC_Customizer::is_plugin_active( 'woocommerce.php' ) ) {
 }
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN_WOOCOMMERCE_VERSION, '<' ) ) {
+if ( version_compare( get_option( 'woocommerce_db_version' ), \WC_Customizer::MIN_WOOCOMMERCE_VERSION, '<' ) ) {
 	add_action( 'admin_notices', array( 'WC_Customizer', 'render_outdated_wc_version_notice' ) );
 	return;
 }
@@ -126,7 +126,7 @@ class WC_Customizer {
 	 */
 	protected function includes() {
 		require_once( 'includes/class-wc-customizer-integrations.php' );
-		$this->integrations = new WC_Customizer_Integrations();
+		$this->integrations = new \WC_Customizer_Integrations();
 	}
 
 
@@ -338,7 +338,7 @@ class WC_Customizer {
 	 *
 	 * @since 1.2.0
 	 * @param string $text add to cart text
-	 * @param WC_Product $product product object
+	 * @param \WC_Product $product product object
 	 * @return string modified add to cart text
 	 */
 	public function customize_add_to_cart_text( $text, $product ) {
@@ -555,9 +555,11 @@ class WC_Customizer {
 	 * @return \WC_Customizer
 	 */
 	public static function instance() {
-		if ( is_null( self::$instance ) ) {
+
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
+
 		return self::$instance;
 	}
 
@@ -623,5 +625,9 @@ class WC_Customizer {
  * @return \WC_Customizer
  */
 function wc_customizer() {
-	return WC_Customizer::instance();
+	return \WC_Customizer::instance();
 }
+
+
+// fire it up!
+wc_customizer();
