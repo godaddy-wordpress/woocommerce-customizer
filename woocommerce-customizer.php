@@ -42,7 +42,7 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN
 /**
  * WooCommerce Customizer Main Plugin Class.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 class WC_Customizer {
 
