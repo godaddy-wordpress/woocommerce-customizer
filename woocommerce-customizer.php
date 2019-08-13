@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.6.1
+ * Version: 2.7.0-dev.1
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -20,8 +20,8 @@
  * @copyright Copyright (c) 2013-2019, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  *
- * WC requires at least: 2.6.14
- * WC tested up to: 3.6.4
+ * WC requires at least: 3.0.9
+ * WC tested up to: 3.7.0
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -40,44 +40,18 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN
 
 
 /**
- * # WooCommerce Customizer Main Plugin Class
+ * WooCommerce Customizer Main Plugin Class.
  *
- * ## Plugin Overview
- *
- * Adds a few settings pages which make uses of some of the simpler filters inside WooCommerce, so if you want to quickly
- * change button text or the number of products per page, you can use this instead of having to write code for the filter.
- * Note this isn't designed as a rapid development/prototyping tool -- for a production site you should use the actual filter
- * instead of relying on this plugin.
- *
- * ## Admin Considerations
- *
- * A 'Customizer' sub-menu page is added to the top-level WooCommerce page, which contains 4 tabs with the settings
- * for each section - Shop Loop, Product Page, Checkout, Misc
- *
- * ## Frontend Considerations
- *
- * The filters that the plugin exposes as settings as used exclusively on the frontend.
- *
- * ## Database
- *
- * ### Global Settings
- *
- * + `wc_customizer_active_customizations` - a serialized array of active customizations in the format
- * filter name => filter value
- *
- * ### Options table
- *
- * + `wc_customizer_version` - the current plugin version, set on install/upgrade
- *
+ * @since 1.0
  */
 class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.6.1';
+	const VERSION = '2.7.0-dev.1';
 
 	/** required WooCommerce version number */
-	const MIN_WOOCOMMERCE_VERSION = '2.6.14';
+	const MIN_WOOCOMMERCE_VERSION = '3.0.9';
 
 	/** @var \WC_Customizer single instance of this plugin */
 	protected static $instance;
@@ -238,22 +212,6 @@ class WC_Customizer {
 
 
 	/**
-	 * Checks if WooCommerce is active
-	 *
-	 * @since 2.3.0
-	 * @deprecated 2.6.0
-	 *
-	 * @return bool true if WooCommerce is active, false otherwise
-	 */
-	public static function is_woocommerce_active() {
-
-		_deprecated_function( 'WC_Customizer::is_woocommerce_active', '2.6.0', 'WC_Customizer::is_plugin_active' );
-
-		return self::is_plugin_active( 'woocommerce.php' );
-	}
-
-
-	/**
 	 * Helper function to determine whether a plugin is active.
 	 *
 	 * @since 2.6.0
@@ -341,7 +299,7 @@ class WC_Customizer {
 	 * Add hook to selected filters
 	 *
 	 * @since 1.0.0
-	 * @return string $filter_value value to use for selected hook
+	 * @return void|string $filter_value value to use for selected hook
 	 */
 	public function customize() {
 
@@ -667,15 +625,3 @@ class WC_Customizer {
 function wc_customizer() {
 	return WC_Customizer::instance();
 }
-
-
-/**
- * The WC_Customizer global object
- * TODO: Remove with WC 3.1 compat {BR 2017-03-09}
- *
- * @deprecated 2.3.0
- *
- * @name $wc_customizer
- * @global WC_Customizer $GLOBALS['wc_customizer']
- */
-$GLOBALS['wc_customizer'] = wc_customizer();
