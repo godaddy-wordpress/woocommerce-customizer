@@ -41,7 +41,7 @@ class WC_Customizer_Integrations {
 	 */
 	public function __construct() {
 
-		if ( \WC_Customizer::is_plugin_active( 'woocommerce-product-bundles.php' ) ) {
+		if ( WC_Customizer::is_plugin_active( 'woocommerce-product-bundles.php' ) ) {
 
 			add_filter( 'wc_customizer_settings', array( $this, 'add_bundles_settings' ) );
 			add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_bundle_add_to_cart_text' ), 150, 2 );

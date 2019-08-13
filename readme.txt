@@ -4,7 +4,6 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.4
 Tested up to: 5.2.2
-Requires PHP: 5.6
 Stable tag: 2.7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -75,7 +74,6 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 = 2019.08.13 - version 2.7.0
 * Misc - Add support for WooCommerce 3.7
 * Misc - Remove support for WooCommerce 2.6
-* Misc - Require PHP 5.6+
 * Misc - Require WordPress 4.4+
 
 = 2019.06.12 - version 2.6.1

@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) or exit;
  *
  * @since 2.0.0
  */
-class WC_Customizer_Settings extends \WC_Settings_Page {
+class WC_Customizer_Settings extends WC_Settings_Page {
 
 
 	/**
@@ -84,7 +84,7 @@ class WC_Customizer_Settings extends \WC_Settings_Page {
 			add_filter( "pre_option_{$filter}", array( $this, 'get_customization' ) );
 		}
 
-		\WC_Admin_Settings::output_fields( $settings );
+		WC_Admin_Settings::output_fields( $settings );
 	}
 
 
@@ -452,4 +452,4 @@ class WC_Customizer_Settings extends \WC_Settings_Page {
 }
 
 // setup settings
-return wc_customizer()->settings = new \WC_Customizer_Settings();
+return wc_customizer()->settings = new WC_Customizer_Settings();
