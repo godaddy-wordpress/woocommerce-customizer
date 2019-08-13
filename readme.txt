@@ -76,6 +76,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 * Misc - Add support for WooCommerce 3.7
 * Misc - Remove support for WooCommerce 2.6
 * Misc - Require PHP 5.6+
+* Misc - Require WordPress 4.4+
 
 = 2019.06.12 - version 2.6.1
 * Misc - Declare WooCommerce 3.6 compatibility
