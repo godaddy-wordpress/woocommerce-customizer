@@ -72,6 +72,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 == Changelog ==
 
 = 2020.nn.nn - version 2.7.3-dev.1 =
+* Misc - Add support for WooCommerce 4.0
 
 = 2020.02.05 - version 2.7.2 =
 * Misc - Add support for WooCommerce 3.9
