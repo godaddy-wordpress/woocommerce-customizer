@@ -3,7 +3,7 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.4
-Tested up to: 5.3.2
+Tested up to: 5.4.1
 Stable tag: 2.7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,7 +71,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2020.nn.nn - version 2.7.4-dev.1 =
+= 2020.05.04 - version 2.7.4 =
 * Misc - Add support for WooCommerce 4.1
 
 = 2020.03.10 - version 2.7.3 =
