@@ -83,12 +83,12 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 = 2019.11.11 - version 2.7.1 =
 * Misc - Add support for WooCommerce 3.8
 
-= 2019.08.15 - version 2.7.0
+= 2019.08.15 - version 2.7.0 =
 * Misc - Add support for WooCommerce 3.7
 * Misc - Remove support for WooCommerce 2.6
 * Misc - Require WordPress 4.4+
 
-= 2019.06.12 - version 2.6.1
+= 2019.06.12 - version 2.6.1 =
 * Misc - Declare WooCommerce 3.6 compatibility
 
 = 2018.07.17 - version 2.6.0 =
