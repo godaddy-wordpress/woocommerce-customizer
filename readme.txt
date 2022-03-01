@@ -14,7 +14,7 @@ Helps you customize WooCommerce without writing any code!
 
 WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP code to use them. This plugin provides a settings page where you can add your customizations and save them without needing to write any code or modify any templates, which is helpful for quick change testing.
 
-> **Requires** WooCommerce 3.0.9+
+> **Requires** WooCommerce 3.9.4+
 
 Here are some customizations you can make:
 
