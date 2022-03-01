@@ -405,7 +405,7 @@ class WC_Customizer {
 	public function customize_single_backorder_text( $text, $product ) {
 
 		// backorder text
-		if ( isset( $this->filters['single_backorder_text'] ) && $product->managing_stock() && $product->is_on_backorder( 1 ) ) {
+		if ( isset( $this->filters['single_backorder_text'] ) && $product->is_on_backorder( 1 ) ) {
 			return $this->filters['single_backorder_text'];
 		}
 
