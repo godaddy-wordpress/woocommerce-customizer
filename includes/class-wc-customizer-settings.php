@@ -394,7 +394,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array(
-						'id'       => 'woocommerce_countries_tax_or_vat',
+						'id'       => 'woocommerce_rate_label',
 						'title'    => __( 'Tax Label', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes the Taxes label. Defaults to Tax for USA, VAT for European countries', 'woocommerce-customizer' ),
 						'type'     => 'text'
