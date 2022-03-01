@@ -2,7 +2,7 @@
 Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
-Requires at least: 4.4
+Requires at least: 4.7
 Tested up to: 5.9.1
 Stable tag: 2.7.5
 License: GPLv3 or later
