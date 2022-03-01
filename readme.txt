@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.7
 Tested up to: 5.9.1
-Stable tag: 2.7.5
+Stable tag: 2.7.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,6 +70,9 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2022.03.01 - version 2.7.6 =
+* Fix - Remove image placeholder. This is included in WC 3.5+
 
 = 2022.03.01 - version 2.7.5 =
 * Misc - Require WooCommerce 3.9.4 or newer
