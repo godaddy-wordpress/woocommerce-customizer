@@ -3,8 +3,8 @@ Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.4
-Tested up to: 5.4.1
-Stable tag: 2.7.4
+Tested up to: 5.9.1
+Stable tag: 2.7.5-dev.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,7 @@ Helps you customize WooCommerce without writing any code!
 
 WooCommerce includes tons of filters to let you customize button text, labels, and more, but you have to write PHP code to use them. This plugin provides a settings page where you can add your customizations and save them without needing to write any code or modify any templates, which is helpful for quick change testing.
 
-> **Requires** WooCommerce 3.0.9+
+> **Requires** WooCommerce 3.9.4+
 
 Here are some customizations you can make:
 
@@ -70,6 +70,9 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2022.nn.nn - version 2.7.5-dev.1 =
+* Misc - Require WooCommerce 3.9.4 or newer
 
 = 2020.05.04 - version 2.7.4 =
 * Misc - Add support for WooCommerce 4.1
