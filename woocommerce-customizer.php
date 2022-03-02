@@ -5,7 +5,7 @@
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.7.5
+ * Version: 2.7.6-dev.1
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -46,7 +46,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.7.5';
+	const VERSION = '2.7.6-dev.1';
 
 	/** required WooCommerce version number */
 	const MIN_WOOCOMMERCE_VERSION = '3.9.4';
@@ -167,13 +167,6 @@ class WC_Customizer {
 					} else {
 
 						add_filter( 'woocommerce_product_add_to_cart_text', array( $this, 'customize_add_to_cart_text' ), 50, 2 );
-					}
-
-				} elseif ( 'woocommerce_placeholder_img_src' === $filter_name ) {
-
-					// only filter placeholder images on the frontend
-					if ( ! is_admin() ) {
-						add_filter( $filter_name, array( $this, 'customize' ), 50 );
 					}
 
 				} elseif ( 'loop_sale_flash_text' === $filter_name || 'single_sale_flash_text' === $filter_name ) {
