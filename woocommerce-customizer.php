@@ -46,7 +46,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.7.6';
+	const VERSION = '2.7.6-dev.1';
 
 	/** required WooCommerce version number */
 	const MIN_WOOCOMMERCE_VERSION = '3.9.4';
