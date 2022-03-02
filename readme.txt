@@ -71,8 +71,8 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2022.03.01 - version 2.7.6 =
-* Fix - Remove image placeholder. This is included in WC 3.5+
+= 2022.nn.nn - version 2.7.6-dev.1 =
+* Fix - Remove image placeholder (this is included in WC 3.5+)
 
 = 2022.03.01 - version 2.7.5 =
 * Misc - Require WooCommerce 3.9.4 or newer
