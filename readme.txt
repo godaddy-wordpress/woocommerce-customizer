@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.7
 Tested up to: 5.9.1
-Stable tag: 2.7.6
+Stable tag: 2.7.6-dev.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
