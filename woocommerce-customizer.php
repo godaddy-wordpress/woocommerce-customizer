@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WooCommerce Customizer
+ * Plugin Name: Customizer for WooCommerce
  * Plugin URI: http://www.skyverge.com/product/woocommerce-customizer/
  * Description: Customize WooCommerce without code! Easily change add to cart button text and more.
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com
- * Version: 2.7.6
+ * Version: 2.7.7-dev.1
  * Text Domain: woocommerce-customizer
  * Domain Path: /i18n/languages/
  *
@@ -38,7 +38,7 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), WC_Customizer::MIN
 
 
 /**
- * WooCommerce Customizer Main Plugin Class.
+ * Customizer for WooCommerce Main Plugin Class.
  *
  * @since 1.0.0
  */
@@ -46,7 +46,7 @@ class WC_Customizer {
 
 
 	/** plugin version number */
-	const VERSION = '2.7.6';
+	const VERSION = '2.7.7-dev.1';
 
 	/** required WooCommerce version number */
 	const MIN_WOOCOMMERCE_VERSION = '3.9.4';
@@ -101,7 +101,7 @@ class WC_Customizer {
 	public function __clone() {
 
 		/* translators: Placeholders: %s - plugin name */
-		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'woocommerce-customizer' ), 'Customizer for WooCommerce' ), '2.3.0' );
 	}
 
 
@@ -113,7 +113,7 @@ class WC_Customizer {
 	public function __wakeup() {
 
 		/* translators: Placeholders: %s - plugin name */
-		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-customizer' ), 'WooCommerce Customizer' ), '2.3.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-customizer' ), 'Customizer for WooCommerce' ), '2.3.0' );
 	}
 
 
@@ -249,7 +249,7 @@ class WC_Customizer {
 
 		$message = sprintf(
 			/* translators: %1$s - <strong>, %2$s - </strong>, %3$s - <a>, %4$s - version number, %5$s - </a> */
-			__( '%1$sWooCommerce Customizer is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version %4$s or newer%5$s', 'woocommerce-customizer' ),
+			__( '%1$sCustomizer for WooCommerce is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version %4$s or newer%5$s', 'woocommerce-customizer' ),
 			'<strong>',
 			'</strong>',
 			'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -270,7 +270,7 @@ class WC_Customizer {
 
 		$message = sprintf(
 			/* translators: Placeholders: %1$s - <strong>, %2$s - </strong>, %3$s - version number, %4$s and %6$s - <a> tags, %5$s - </a> */
-			__( '%1$sWooCommerce Customizer is inactive.%2$s This plugin requires WooCommerce %3$s or newer. Please %4$supdate WooCommerce%5$s or %6$srun the WooCommerce database upgrade%5$s.', 'woocommerce-customizer' ),
+			__( '%1$sCustomizer for WooCommerce is inactive.%2$s This plugin requires WooCommerce %3$s or newer. Please %4$supdate WooCommerce%5$s or %6$srun the WooCommerce database upgrade%5$s.', 'woocommerce-customizer' ),
 			'<strong>',
 			'</strong>',
 			self::MIN_WOOCOMMERCE_VERSION,

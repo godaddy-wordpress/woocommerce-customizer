@@ -1,10 +1,10 @@
-=== WooCommerce Customizer ===
+=== Customizer for WooCommerce ===
 Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 4.7
 Tested up to: 5.9.1
-Stable tag: 2.7.6
+Stable tag: 2.7.7-dev.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,7 +42,7 @@ We do support our free plugins and extensions, but please understand that suppor
 
 == Installation ==
 
-1. You can (a) Search Plugins &gt; Add New for "WooCommerce Customizer", (b) Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory, or (c) upload the zip file via the "Plugins &gt; Add New" menu
+1. You can (a) Search Plugins &gt; Add New for "Customizer for WooCommerce", (b) Upload `woocommerce-customizer` folder to the `/wp-content/plugins/` directory, or (c) upload the zip file via the "Plugins &gt; Add New" menu
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to the 'Customizer' tab under WooCommerce &gt; Settings
 4. Start customizing!
@@ -70,6 +70,9 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2022.nn.nn - version 2.7.7-dev.1 =
+* Misc - Rename to Customizer for WooCommerce
 
 = 2022.03.02 - version 2.7.6 =
 * Fix - Remove image placeholder (this is included in WC 3.5+)

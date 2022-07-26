@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Customizer
+ * Customizer for WooCommerce
  *
  * This source file is subject to the GNU General Public License v3.0
  * that is bundled with this package in the file license.txt.
@@ -12,8 +12,8 @@
  *
  * DISCLAIMER
  *
- * Do not edit or add to this file if you wish to upgrade WooCommerce Customizer to newer
- * versions in the future. If you wish to customize WooCommerce Customizer for your
+ * Do not edit or add to this file if you wish to upgrade Customizer for WooCommerce to newer
+ * versions in the future. If you wish to customize Customizer for WooCommerce for your
  * needs please refer to http://www.skyverge.com/product/woocommerce-customizer/ for more information.
  *
  * @author      SkyVerge
