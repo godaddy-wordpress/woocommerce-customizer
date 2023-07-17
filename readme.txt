@@ -72,7 +72,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2023.nn.nn - version 2.8.0-dev.1
+= 2023.nn.nn - version 2.8.0-dev.1 =
 * Misc - Add compatibility for WooCommerce High Performance Order Storage (HPOS)
 * Misc - Require PHP 7.4 and WordPress 5.6
 
