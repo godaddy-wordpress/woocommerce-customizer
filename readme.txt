@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@s
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 5.6
 Requires PHP: 7.4
-Tested up to: 6.0.1
-Stable tag: 2.8.0-dev.1
+Tested up to: 6.2.2
+Stable tag: 2.8.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,7 +72,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 
 == Changelog ==
 
-= 2023.nn.nn - version 2.8.0-dev.1 =
+= 2023.07.28 - version 2.8.0 =
 * Misc - Add compatibility for WooCommerce High Performance Order Storage (HPOS)
 * Misc - Require PHP 7.4 and WordPress 5.6
 

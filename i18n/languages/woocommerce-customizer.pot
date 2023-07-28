@@ -1,15 +1,15 @@
-# Copyright (C) 2022 SkyVerge
+# Copyright (C) 2023 SkyVerge
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Customizer for WooCommerce 2.7.7\n"
+"Project-Id-Version: Customizer for WooCommerce 2.8.0\n"
 "Report-Msgid-Bugs-To: "
 "https://woocommerce.com/my-account/marketplace-ticket-form/\n"
-"POT-Creation-Date: 2022-08-01 03:51:06+00:00\n"
+"POT-Creation-Date: 2023-07-28 11:35:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -290,17 +290,17 @@ msgid ""
 "for European countries"
 msgstr ""
 
-#: woocommerce-customizer.php:104
+#: woocommerce-customizer.php:124
 #. translators: Placeholders: %s - plugin name
 msgid "You cannot clone instances of %s."
 msgstr ""
 
-#: woocommerce-customizer.php:116
+#: woocommerce-customizer.php:136
 #. translators: Placeholders: %s - plugin name
 msgid "You cannot unserialize instances of %s."
 msgstr ""
 
-#: woocommerce-customizer.php:252
+#: woocommerce-customizer.php:272
 #. translators: %1$s - <strong>, %2$s - </strong>, %3$s - <a>, %4$s - version
 #. number, %5$s - </a>
 msgid ""
@@ -308,7 +308,7 @@ msgid ""
 "Please %3$sactivate WooCommerce version %4$s or newer%5$s"
 msgstr ""
 
-#: woocommerce-customizer.php:273
+#: woocommerce-customizer.php:293
 #. translators: Placeholders: %1$s - <strong>, %2$s - </strong>, %3$s - version
 #. number, %4$s and %6$s - <a> tags, %5$s - </a>
 msgid ""
@@ -317,19 +317,19 @@ msgid ""
 "WooCommerce database upgrade%5$s."
 msgstr ""
 
-#: woocommerce-customizer.php:458
+#: woocommerce-customizer.php:478
 msgid "Configure"
 msgstr ""
 
-#: woocommerce-customizer.php:459
+#: woocommerce-customizer.php:479
 msgid "FAQ"
 msgstr ""
 
-#: woocommerce-customizer.php:460
+#: woocommerce-customizer.php:480
 msgid "Support"
 msgstr ""
 
-#: woocommerce-customizer.php:505
+#: woocommerce-customizer.php:525
 #. translators: Placeholder: %s - sale percentage
 msgid "up to %s"
 msgstr ""
