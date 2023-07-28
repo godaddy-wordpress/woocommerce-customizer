@@ -2,9 +2,10 @@
 Contributors: SkyVerge, maxrice, tamarazuk, chasewiseman, nekojira, beka.rice
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Customizer
 Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
-Requires at least: 4.7
+Requires at least: 5.6
+Requires PHP: 7.4
 Tested up to: 6.0.1
-Stable tag: 2.7.7
+Stable tag: 2.8.0-dev.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,6 +71,10 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2023.nn.nn - version 2.8.0-dev.1 =
+* Misc - Add compatibility for WooCommerce High Performance Order Storage (HPOS)
+* Misc - Require PHP 7.4 and WordPress 5.6
 
 = 2022.07.31 - version 2.7.7 =
 * Misc - Rename to Customizer for WooCommerce
