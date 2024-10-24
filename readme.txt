@@ -5,7 +5,7 @@ Tags: woocommerce, woocommerce shop, woocommerce filters, woocommerce text
 Requires at least: 5.6
 Requires PHP: 7.4
 Tested up to: 6.6.2
-Stable tag: 2.8.0
+Stable tag: 2.9.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,6 +71,11 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 1. Settings Page to start customizing!
 
 == Changelog ==
+
+= 2024.nn.nn - version 2.9.0-dev.1 =
+* Fix - Avoid deprecation notice for PHP 8.2 for dynamic property
+* Misc - Add support for WooCommerce 9.3.3
+* Misc - Add support for WordPress 6.6.2
 
 = 2023.07.28 - version 2.8.0 =
 * Misc - Add compatibility for WooCommerce High Performance Order Storage (HPOS)
