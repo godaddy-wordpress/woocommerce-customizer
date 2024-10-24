@@ -32,6 +32,10 @@ defined( 'ABSPATH' ) or exit;
  */
 class WC_Customizer_Settings extends WC_Settings_Page {
 
+	/**
+	 * @var array|false|mixed|null
+	 */
+	protected array $customizations = [];
 
 	/**
 	 * Add various admin hooks/filters
