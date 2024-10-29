@@ -1,17 +1,38 @@
-# Copyright (C) 2023 SkyVerge
+# Copyright (C) 2024 SkyVerge
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Customizer for WooCommerce 2.8.0\n"
-"Report-Msgid-Bugs-To: "
-"https://woocommerce.com/my-account/marketplace-ticket-form/\n"
-"POT-Creation-Date: 2023-07-28 11:35:31+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: Customizer for WooCommerce 2.9.0-dev.1\n"
+"Report-Msgid-Bugs-To: https://woocommerce.com/my-account/marketplace-ticket-form/\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-29T15:32:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: woocommerce-customizer\n"
+
+#. Plugin Name of the plugin
+msgid "Customizer for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "http://www.skyverge.com/product/woocommerce-customizer/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Customize WooCommerce without code! Easily change add to cart button text and more."
+msgstr ""
+
+#. Author of the plugin
+msgid "SkyVerge"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.skyverge.com"
+msgstr ""
 
 #: includes/class-wc-customizer-integrations.php:76
 msgid "Bundle Product"
@@ -21,300 +42,278 @@ msgstr ""
 msgid "Changes the add to cart button text for bundle products on all loop pages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:44
+#: includes/class-wc-customizer-settings.php:48
 msgid "Customizer"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:61
+#: includes/class-wc-customizer-settings.php:65
 msgid "Shop Loop"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:62
+#: includes/class-wc-customizer-settings.php:66
 msgid "Product Page"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:63
+#: includes/class-wc-customizer-settings.php:67
 msgid "Checkout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:64
-#: includes/class-wc-customizer-settings.php:360
+#: includes/class-wc-customizer-settings.php:68
+#: includes/class-wc-customizer-settings.php:364
 msgid "Misc"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:148
-#: includes/class-wc-customizer-settings.php:275
+#: includes/class-wc-customizer-settings.php:152
+#: includes/class-wc-customizer-settings.php:279
 msgid "Add to Cart Button Text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:154
+#: includes/class-wc-customizer-settings.php:158
 msgid "Simple Product"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:155
+#: includes/class-wc-customizer-settings.php:159
 msgid "Changes the add to cart button text for simple products on all loop pages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:161
+#: includes/class-wc-customizer-settings.php:165
 msgid "Variable Product"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:162
+#: includes/class-wc-customizer-settings.php:166
 msgid "Changes the add to cart button text for variable products on all loop pages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:168
+#: includes/class-wc-customizer-settings.php:172
 msgid "Grouped Product"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:169
+#: includes/class-wc-customizer-settings.php:173
 msgid "Changes the add to cart button text for grouped products on all loop pages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:175
+#: includes/class-wc-customizer-settings.php:179
 msgid "Out of Stock Product"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:176
-msgid ""
-"Changes the add to cart button text for out of stock products on all loop "
-"pages"
+#: includes/class-wc-customizer-settings.php:180
+msgid "Changes the add to cart button text for out of stock products on all loop pages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:183
-#: includes/class-wc-customizer-settings.php:310
+#: includes/class-wc-customizer-settings.php:187
+#: includes/class-wc-customizer-settings.php:314
 msgid "Sale Flash"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:189
-#: includes/class-wc-customizer-settings.php:316
+#: includes/class-wc-customizer-settings.php:193
+#: includes/class-wc-customizer-settings.php:320
 msgid "Sale badge text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:190
+#: includes/class-wc-customizer-settings.php:194
 msgid "Changes text for the sale flash on all loop pages. Default: \"Sale!\""
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:193
-#: includes/class-wc-customizer-settings.php:320
 #. translators: Placeholders: %1$s - <code>, %2$s - </code>
+#: includes/class-wc-customizer-settings.php:197
+#: includes/class-wc-customizer-settings.php:324
 msgid "Use %1$s{percent}%2$s to insert percent off, e.g., \"{percent} off!\""
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:193
-#: includes/class-wc-customizer-settings.php:320
-msgid ""
-"Shows \"up to n%\" for grouped or variable products if multiple percentages "
-"are possible."
+#. translators: Placeholders: %1$s - <code>, %2$s - </code>
+#: includes/class-wc-customizer-settings.php:197
+#: includes/class-wc-customizer-settings.php:324
+msgid "Shows \"up to n%\" for grouped or variable products if multiple percentages are possible."
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:199
+#: includes/class-wc-customizer-settings.php:203
 msgid "Layout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:205
+#: includes/class-wc-customizer-settings.php:209
 msgid "Products displayed per page"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:206
+#: includes/class-wc-customizer-settings.php:210
 msgid "Changes the number of products displayed per page"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:212
+#: includes/class-wc-customizer-settings.php:216
 msgid "Product columns displayed per page"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:213
+#: includes/class-wc-customizer-settings.php:217
 msgid "Changes the number of columns displayed per page"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:219
+#: includes/class-wc-customizer-settings.php:223
 msgid "Product thumbnail columns displayed"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:220
+#: includes/class-wc-customizer-settings.php:224
 msgid "Changes the number of product thumbnail columns displayed"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:233
+#: includes/class-wc-customizer-settings.php:237
 msgid "Tab Titles"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:239
-#: includes/class-wc-customizer-settings.php:260
+#: includes/class-wc-customizer-settings.php:243
+#: includes/class-wc-customizer-settings.php:264
 msgid "Product Description"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:240
+#: includes/class-wc-customizer-settings.php:244
 msgid "Changes the Production Description tab title"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:246
-#: includes/class-wc-customizer-settings.php:267
+#: includes/class-wc-customizer-settings.php:250
+#: includes/class-wc-customizer-settings.php:271
 msgid "Additional Information"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:247
+#: includes/class-wc-customizer-settings.php:251
 msgid "Changes the Additional Information tab title"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:254
+#: includes/class-wc-customizer-settings.php:258
 msgid "Tab Content Headings"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:261
+#: includes/class-wc-customizer-settings.php:265
 msgid "Changes the Product Description tab heading"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:268
+#: includes/class-wc-customizer-settings.php:272
 msgid "Changes the Additional Information tab heading"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:281
+#: includes/class-wc-customizer-settings.php:285
 msgid "All Product Types"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:282
-msgid ""
-"Changes the Add to Cart button text on the single product page for all "
-"product type"
+#: includes/class-wc-customizer-settings.php:286
+msgid "Changes the Add to Cart button text on the single product page for all product type"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:289
+#: includes/class-wc-customizer-settings.php:293
 msgid "Out of Stock Text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:295
+#: includes/class-wc-customizer-settings.php:299
 msgid "Out of Stock text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:296
+#: includes/class-wc-customizer-settings.php:300
 msgid "Changes text for the out of stock on product pages. Default: \"Out of stock\""
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:302
+#: includes/class-wc-customizer-settings.php:306
 msgid "Backorder text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:303
-msgid ""
-"Changes text for the backorder on product pages. Default: \"Available on "
-"backorder\""
+#: includes/class-wc-customizer-settings.php:307
+msgid "Changes text for the backorder on product pages. Default: \"Available on backorder\""
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:317
+#: includes/class-wc-customizer-settings.php:321
 msgid "Changes text for the sale flash on product pages. Default: \"Sale!\""
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:331
+#: includes/class-wc-customizer-settings.php:335
 msgid "Messages"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:337
+#: includes/class-wc-customizer-settings.php:341
 msgid "Must be logged in text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:338
+#: includes/class-wc-customizer-settings.php:342
 msgid "Changes the message displayed when a customer must be logged in to checkout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:344
+#: includes/class-wc-customizer-settings.php:348
 msgid "Coupon text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:345
+#: includes/class-wc-customizer-settings.php:349
 msgid "Changes the message displayed if the coupon form is enabled on checkout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:352
+#: includes/class-wc-customizer-settings.php:356
 msgid "Login text"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:353
+#: includes/class-wc-customizer-settings.php:357
 msgid "Changes the message displayed if customers can login at checkout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:366
-msgid "Create Account checkbox default"
-msgstr ""
-
-#: includes/class-wc-customizer-settings.php:367
+#: includes/class-wc-customizer-settings.php:371
 msgid "Control the default state for the Create Account checkbox"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:370
+#: includes/class-wc-customizer-settings.php:374
 msgid "Checked"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:371
+#: includes/class-wc-customizer-settings.php:375
 msgid "Unchecked"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:378
+#: includes/class-wc-customizer-settings.php:382
 msgid "Submit Order button"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:379
+#: includes/class-wc-customizer-settings.php:383
 msgid "Changes the Place Order button text on checkout"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:392
+#: includes/class-wc-customizer-settings.php:396
 msgid "Tax"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:398
+#: includes/class-wc-customizer-settings.php:402
 msgid "Tax Label"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:399
+#: includes/class-wc-customizer-settings.php:403
 msgid "Changes the Taxes label. Defaults to Tax for USA, VAT for European countries"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:405
+#: includes/class-wc-customizer-settings.php:409
 msgid "Including Tax Label"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:406
-msgid ""
-"Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT "
-"for European countries"
+#: includes/class-wc-customizer-settings.php:410
+msgid "Changes the Including Taxes label. Defaults to Inc. tax for USA, Inc. VAT for European countries"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:412
+#: includes/class-wc-customizer-settings.php:416
 msgid "Excluding Tax Label"
 msgstr ""
 
-#: includes/class-wc-customizer-settings.php:413
-msgid ""
-"Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT "
-"for European countries"
+#: includes/class-wc-customizer-settings.php:417
+msgid "Changes the Excluding Taxes label. Defaults to Exc. tax for USA, Exc. VAT for European countries"
 msgstr ""
 
-#: woocommerce-customizer.php:124
 #. translators: Placeholders: %s - plugin name
+#: woocommerce-customizer.php:124
 msgid "You cannot clone instances of %s."
 msgstr ""
 
-#: woocommerce-customizer.php:136
 #. translators: Placeholders: %s - plugin name
+#: woocommerce-customizer.php:136
 msgid "You cannot unserialize instances of %s."
 msgstr ""
 
+#. translators: %1$s - <strong>, %2$s - </strong>, %3$s - <a>, %4$s - version number, %5$s - </a>
 #: woocommerce-customizer.php:272
-#. translators: %1$s - <strong>, %2$s - </strong>, %3$s - <a>, %4$s - version
-#. number, %5$s - </a>
-msgid ""
-"%1$sCustomizer for WooCommerce is inactive%2$s as it requires WooCommerce. "
-"Please %3$sactivate WooCommerce version %4$s or newer%5$s"
+msgid "%1$sCustomizer for WooCommerce is inactive%2$s as it requires WooCommerce. Please %3$sactivate WooCommerce version %4$s or newer%5$s"
 msgstr ""
 
+#. translators: Placeholders: %1$s - <strong>, %2$s - </strong>, %3$s - version number, %4$s and %6$s - <a> tags, %5$s - </a>
 #: woocommerce-customizer.php:293
-#. translators: Placeholders: %1$s - <strong>, %2$s - </strong>, %3$s - version
-#. number, %4$s and %6$s - <a> tags, %5$s - </a>
-msgid ""
-"%1$sCustomizer for WooCommerce is inactive.%2$s This plugin requires "
-"WooCommerce %3$s or newer. Please %4$supdate WooCommerce%5$s or %6$srun the "
-"WooCommerce database upgrade%5$s."
+msgid "%1$sCustomizer for WooCommerce is inactive.%2$s This plugin requires WooCommerce %3$s or newer. Please %4$supdate WooCommerce%5$s or %6$srun the WooCommerce database upgrade%5$s."
 msgstr ""
 
 #: woocommerce-customizer.php:478
@@ -329,29 +328,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: woocommerce-customizer.php:525
 #. translators: Placeholder: %s - sale percentage
+#: woocommerce-customizer.php:525
 msgid "up to %s"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Customizer for WooCommerce"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "http://www.skyverge.com/product/woocommerce-customizer/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Customize WooCommerce without code! Easily change add to cart button text "
-"and more."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "SkyVerge"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://www.skyverge.com"
 msgstr ""
