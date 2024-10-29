@@ -73,7 +73,7 @@ Of course! Please fork the [GitHub](https://github.com/skyverge/woocommerce-cust
 == Changelog ==
 
 = 2024.nn.nn - version 2.9.0-dev.1 =
-* Fix - Avoid deprecation notice for PHP 8.2 for dynamic property
+* Fix - Avoid deprecation notice in PHP 8.2+ for dynamic property
 * Misc - Add support for WooCommerce 9.3.3
 * Misc - Add support for WordPress 6.6.2
 
